@@ -196,13 +196,13 @@ R_{Echelle} = 24416
 \begin{equation}
 R_{CCD} =  25000
 \end{equation}
-Man sieht, dass die empirisch bestimmte Auflösung zwar in der gleichen Größenordnung, aber um ca. einen Faktor 2 kleiner ist.
-
-HIER ETWAS SCHLAUES DAZU SCHREIBEN WARUM DAS SO IST
+Man sieht, dass die empirisch bestimmte Auflösung zwar in der gleichen Größenordnung, aber um ca. einen Faktor 2 kleiner ist.\
+Dies ist vor allem dadurch begründet, dass die Kollimatorlinse nicht 'perfekt' ist, also verschiedene Wellenlängen unterschiedlich stark bricht. Dadurch verändert sich die Brennweite der Linse je nach Wellenlänge und das Bild wird unscharf.
 
 \subsection{Auswertung der Spektren}
 \subsubsection{Die Harvard-Klassifikation}
-Sterne können anhand ihres Spektrums in verschiedene Typen eingeteilt werden. Diese Einteilung heißt Harvard-Klassifikation und ordnet Sterne in die Klassen O,B,A,F,G,K, oder M ein (fränkischer, geschlechtsneutraler Merkspruch: 'Ohne Bier ausm Fass gibts ka Maß'). Eine Einteilung der Sterne in diese Klassen ist anhand des Vorhandenseins bestimmter Absorptionslinien möglich. Der Unterschied zwischen Spektren von verschiedenen Sternen ist vor allem durch die Temperatur der Sterne bedingt. Die Linien werden durch Absorption von Photonen durch die Elektronen der Atome in der stellaren Atmosphäre erzeugt. So wird z.B. die Helium I - Linie durch Absorption von Photonen durch He-Atome im angeregten Zustand erzeugt. Um die He-Atome anzuregen, muss die Temperatur aber entsprechend hoch sein, sodass diese Linie in kalten Sternen nicht zu sehen ist. Bei höherer Temperatur sind auch mehr Atome im angeregten Zustand, womit mehr Photonen absorbiert werden und die Linie eine stärkere (bzw. niedrigere) Intensität erhält. Wenn die Temperatur weiter ansteigt, werden die He-Atome jedoch ionisiert und können daher keine Photonen mehr absorbieren, womit die Intensität der Linie wieder abnimmt (bzw. größer wird). Mit diesen Mechanismen lässt sich auch das Verhalten anderer Linien (Ca I, He II, Fe I) erklären. Eine graphische Übersicht ist in Abb. \ref{fig:Harvard} dargestellt.
+Die folgenden Informationen wurden entnommen aus \cite{ttunen}:\\
+Sterne können anhand ihres Spektrums in verschiedene Typen eingeteilt werden. Diese Einteilung heißt Harvard-Klassifikation und ordnet Sterne in die Klassen O,B,A,F,G,K, oder M ein (fränkischer, geschlechtsneutraler Merkspruch: 'Ohne Bier ausm Fass gibts ka Maß'). Eine Einteilung der Sterne in diese Klassen ist anhand des Vorhandenseins bestimmter Absorptionslinien möglich. Der Unterschied zwischen Spektren von verschiedenen Sternen ist vor allem durch die Temperatur der Sterne bedingt. Die Linien werden durch Absorption von Photonen durch die Elektronen der Atome in der stellaren Atmosphäre erzeugt. So wird z.B. die Helium I - Linie durch Absorption von Photonen durch He-Atome im angeregten Zustand erzeugt. Der Übergang vom Grundzustand in den angeregten Zustand ist durch Photonen aus dem sichtbaren Spektrum nicht möglich. Um die He-Atome anzuregen, muss die Temperatur aber entsprechend hoch sein, sodass diese Linie in kalten Sternen nicht zu sehen ist. Bei höherer Temperatur sind auch mehr Atome im angeregten Zustand, womit mehr Photonen absorbiert werden und die Linie eine stärkere (bzw. niedrigere) Intensität erhält. Wenn die Temperatur weiter ansteigt, werden die He-Atome jedoch ionisiert und können daher keine Photonen mehr absorbieren, womit die Intensität der Linie wieder abnimmt (bzw. größer wird). Mit diesen Mechanismen lässt sich auch das Verhalten anderer Linien (Ca I, He II, Fe I) erklären. Bei Molekülen (z.B. TiO) gibt es so viele Übergänge, dass sie im Spektrum nicht mehr unterschieden werden können und als durchgängiges Absorptionsband erscheinen. Eine graphische Übersicht ist in Abb. \ref{fig:Harvard} dargestellt.
 \\
 Anhand der Absorptionslinien im Spektrum kann man nun einige Kriterien zur Einteilung angeben:
 \begin{itemize}
@@ -210,7 +210,7 @@ Anhand der Absorptionslinien im Spektrum kann man nun einige Kriterien zur Einte
 \item Wenn das Spektrum sehr viele Linien zeigt, ist der Stern kalt, also in den Klassen F, G, K oder M.
 \end{itemize}
 
-WARUM IST DAS SO NACHFRAGEN
+Kalte Sterne zeigen viele Linien in ihrem Spektrum, da Elemente wie Eisen oder Calcium nur wenig Energie für die Übergänge zwischen Energieniveaus benötigen und aufgrund der großen Anzahl von Elektronen auch viele Übergänge besitzen. Bei heißen Sternen sind diese Atome bereits ionisiert und es dominieren die Übergänge von Wasserstoff und Helium.
 
 \begin{table}
 \centering
@@ -225,7 +225,7 @@ B &  & • &  &  &  &  \\
 A &  &  &  &  &  &  \\ 
 \hline 
 F &  &  & • &  &  & \\ 
-\hline 
+\hline
 G &  &  &  & • & • &  \\ 
 \hline 
 K &  &  &  & • &  &  \\ 
@@ -237,3 +237,5 @@ M &  &  &  & • &  & • \\
 \end{table}
 
 Mit diesen beiden Kriterien und den in Tabelle \ref{tab:Spektral} dargestellten Linien kann man Sterne sehr gut anhand ihres Spektrums in Spektraltypen einordnen. Da die Übergänge zwischen Spektraltypen teilweise fließend sind, ist die so gefundene Einordnung aber manchmal nicht eindeutig und es muss eine gründlichere Untersuchung durchgeführt werden, für die Zwecke des Praktikums ist dies aber ausreichend.
+
+\subsubsection{Untersuchung des Sonnenspektrums}
