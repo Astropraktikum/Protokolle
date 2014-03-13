@@ -9,13 +9,13 @@ Mit Hilfe eines Spektrographen kann man Licht in seine Farben zerlegen. Dabei be
 
 \item Spalt: Der Spalt schirmt unerwünschte Störquellen ab und sorgt dafür, dass am Dispersionselement ankommende Strahlung im besten Fall von einem Punkt ausgeht, da sich sonst die Auflösung verringert. Dabei kann die Spaltbreite allerdings nicht belibig klein gewählt  werden, da dadurch natürlich auch die Intensität des Lichts abnimmt. Deshalb muss hier ein Optimum gefunden werden.
 
-\item Kollimator: Der Kollimator erzeugt aus dem einfallenden Licht paralleles Licht.
+\item Kollimator: Der Kollimator ist eine Linse, die aus dem einfallenden Licht paralleles Licht erzeugt.
 
 \item Dispersionselement: Das Dispersionselement ist der Hauptbestandteil des Spektrographen. Es trennt das Licht in Abhängigkeit von der Frequenz. Dabei kann es ein Prisma, oder auch ein Gitter sein. (Das Prisma trennt das Licht auf Grund der Frequenzabhängigkeit der Brechung, während die Trennung beim Gitter durch Interferenzeffekte hervorgerufen wird.)
 
 \item Kamera-Objektiv: Das Kamera-Objektiv wird benötigt, um das durch das Dispersionselement erzeugte Spektrum auf den CCD-Detektor abbzubilden.
 
-\item CCD-Detektor: Der CCD-Detektor digitalisiert schließlich das Bild des Spektrums.
+\item CCD-Detektor: Der CCD-Detektor nimmt das Bild auf und digitalisiert es.
 
 \end{itemize}
 Im Bamberger Spektrographen wird ein Blaze-Reflektionsgitter verwendet. (siehe Abb. \ref{fig:101} und \ref{fig:102} ) Dieses hat regelmäßig angeordnete geneigte Furchen und bietet so den Vorteil, dass das Intensitätsmaximum in Richtung des dispergierten Lichtes verschoben wird. Laut \cite{ronomischesPraktikum} ergibt sich aus der Bedingung für konstruktive Interferenz und dem Huygensschen Prinzip:
@@ -61,7 +61,7 @@ Die Unschärfe $\Delta \lambda$  wird  dabei durch zwei Prozesse erzeugt:
 \end{figure}
 
 \subsection{Die Rolle des Spalts}
-Da der Spalt nicht unendlich schmal ist, trifft das Licht nicht perfekt parallel auf das Gitter. Deshalb variiert der Einfallswinkel $ \alpha $ um $ \Delta \alpha $, was letztendlich das Auflöungsvermögen verschlechtert.
+Da der Spalt nicht unendlich schmal ist, trifft das Licht nicht perfekt parallel auf das Gitter. Deshalb variiert der Einfallswinkel $ \alpha $ um $ \Delta \alpha $, was letztendlich das Auflösungsvermögen verschlechtert.
 
 \subsubsection{Wellenlängenunschärfe hervorgerufen durch endliche Spaltbreiten}
 Für eine Linse (siehe Abb. \ref{fig:103}) gilt mit Hilfe der Kleinwinkelnäherung:
@@ -92,7 +92,7 @@ R_{Spalt} = \frac{n \cdot f_{Koll}}{d \cdot b \cdot \cos \alpha} \lambda
 Also ist die Auflösung auch durch den Spalt auf einen endlichen Wert begrenzt.
 
 \subsubsection{Auflösung des Spektrographen}
-Laut \cite{ronomischesPraktikum} ist die durch die Spaltbreite vorgegebene Auflöung typyscherweise wesentlich kleiner als die des Gitters. Deshalb kann in guter Näherung davon ausgegangen werden, dass für die Auflösung des gesamten Spektrographen gilt:
+Laut \cite{ronomischesPraktikum} ist die durch die Spaltbreite vorgegebene Auflösung typischerweise wesentlich kleiner als die des Gitters. Deshalb kann in guter Näherung davon ausgegangen werden, dass für die Auflösung des gesamten Spektrographen gilt:
 
 \begin{equation}
 R = \frac{n \cdot f_{Koll}}{d \cdot b \cdot \cos \alpha} \lambda
@@ -109,7 +109,7 @@ Um eine möglichst gute Auflösung zu erhalten, muss man also die Parameter aus 
 \end{itemize}
 
 \subsubsection{Optimierung der Auflösung des Spektrographen}
-Beide oben genannten Maßnahmnen bringen auch Nachteile mit sich. So darf z.B. die Spaltbreite nicht zu klein gewählt werden, da Sterne die von der Erde aus beobachtet werden durch das Seeing eine nicht zu vernachlässigende Ausdehnung erhalten. Ein Stern beim durchschnittlichen Bamberger Seeing hat in der Fokalebene einen Durchmesser von $48.9 \mu \mathrm{m} $. Dieser Wert wäre also der kleinste mögliche Wert mit voller Lichteinstrahlung und somit der ideale Wert für die Blendenöffnung.
+Beide oben genannten Maßnahmen bringen auch Nachteile mit sich. So darf z.B. die Spaltbreite nicht zu klein gewählt werden, da Sterne die von der Erde aus beobachtet werden durch das Seeing eine nicht zu vernachlässigende Ausdehnung erhalten. Ein Stern beim durchschnittlichen Bamberger Seeing hat in der Fokalebene einen Durchmesser von $48.9 \mu \mathrm{m} $. Dieser Wert wäre also der kleinste mögliche Wert mit voller Lichteinstrahlung und somit der ideale Wert für die Blendenöffnung.
 
 \subsection{Echelle-Spektrograph}
 \subsubsection{Überlappung von Beugungsordnungen}
@@ -167,7 +167,7 @@ Die Auflösung der CCD-Kamera ist in der gleichen Größenordnung wie die des Sp
 
 
 \subsection{Durchführung der Messung}
-Leon ist voll cool
+Leon ist voll schwool
 
 \subsection{Datenreduktion}
 Um die aufgenommenen Spektren am Computer untersuchen zu können, müssen sie zunächst kalibriert und reduziert werden. Dies wurde in diesem Versuch mit dem Programmpaket MIDAS (Munich Image Data Analysis System) durchgeführt. Zunächst wurden die Beugungsordnungen und deren Position auf dem CCD-Chip identifiziert. Dazu mussten mehrere Kalibrationen mit verschiedenen angegebenen Anzahlen von Beugungsordnungen durchgeführt werden, bis alle Beugungsordnungen korrekt identifiziert wurden. Der zweite Schritt bestand darin, den Pixeln auf dem CCD-Chip die entsprechenden Wellenlängen zuzuordnen. Dazu wurde das aufgenommene Spektrum der ThAr-Lampe mit einem Referenzspektrum verglichen, indem zwei im Referenzspektrum gegebene Linien und deren Beugungsordnungen in dem aufgenommenen Spektrum markiert wurden. Anhand dieser Daten konnte MIDAS dann die Wellenlängenkalibration durchführen.\
