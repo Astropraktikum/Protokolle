@@ -1,0 +1,103 @@
+\section{Aufgabe 5}
+Die Erde dreht sich in 23 Stunden, 56 Minuten und 4.1 Sekunden einmal um ihre eigene Achse bzw. die Stundenwinkelachse.
+Die Winkelgeschwindigkeit der Erde ergibt sich dann zu:
+\begin{equation}
+\omega_{Erde} = \frac{2\pi}{T} = \frac{2\pi}{86164.1 \mathrm{s}} \approx 7.30 \cdot 10^{-5} \frac{1}{\mathrm{s}}
+\end{equation}
+bzw. $4.18 \cdot 10^{-3\   \circ} \frac{1}{\mathrm{s}}$.
+Der Mond dreht sich in 27.56 Tagen (anomalistische Periode) einmal um die Erde. Seine Winkelgeschwindigkeit $\omega_{Mond}$ aus Sicht der Erde ergibt sich damit zu $2.64\cdot 10^{-6} \frac{1}{\mathrm{s}}\ \textrm{bzw.}\ 1.51 \cdot 10^{-4\   \circ} \frac{1}{\mathrm{s}}$.
+Die Winkelgeschwindigkeit, mit der der Mond durch das Sichtfeld des Teleskops (bei ausgeschalteter Nachführung) wandert, ergibt sich damit zu $\omega = \omega_{Erde}-\omega_{Mond}$, also zu $7.04\cdot 10^{-5} \frac{1}{\mathrm{s}}$ bzw. $4.03 \cdot 10^{-3\   \circ} \frac{1}{\mathrm{s}}$. 
+Der Winkeldurchmesser des Mondes ergibt sich über die Beziehung
+\begin{equation}
+tan\  \alpha_{Mond} = \frac{D_{Mond}}{d_{Erde-Mond}}
+\end{equation}
+wobei $D_{Mond}$ der Durchmesser des Mondes und $d_{Erde-Mond}$ die mittlere Entfernung von Erde und Mond ist, von der der Radius der Erde abgezogen wurde.
+Mit Kleinwinkelnäherung gilt dann:
+\begin{equation}
+\alpha_{Mond} = \frac{D_{Mond}}{d_{Erde-Mond}} = \frac{3476 \mathrm{km}}{387129 \mathrm{km}} \approx 8.98 \cdot 10^{-3}\ \mathrm{bzw.}\ 0.51^{\circ} = 30' 22''
+\end{equation}
+\\
+Die Zeit, die der Mond braucht, um das Sichtfeld des Teleskops zu durchwandern, hängt vom verwendeten Teleskop und Okular ab.
+Als allgemeine Formel gilt:
+\begin{equation}
+t = \frac{\alpha_{Teleskop}+\alpha_{Mond}}{\omega}
+\end{equation}
+$\alpha_{Teleskop}$ ergibt sich aus der Formel
+\begin{equation}
+\alpha_{Teleskop} = \frac{\alpha_{Schein}}{V}
+\end{equation}
+wobei $\alpha_{Schein}$ das scheinbare Sichtfeld des Okulars und V die erreichbare Vergrößerung des Teleskops ist. V errechnet sich aus
+\begin{equation}
+V = \frac{f_{Teleskop}}{f_{Okular}}
+\end{equation}
+wobei f die Brennweite des Teleskops bzw. des Okulars ist.
+\\
+Also gilt:
+\begin{equation}
+t = \frac{\frac{f_{Okular}}{f_{Teleskop}}\cdot \alpha_{Schein} + \alpha_{Mond}}{\omega}
+\end{equation}
+
+Als Beispiel soll nun die Zeit für das 50cm - Teleskop ($f_{Teleskop} = 3.35\mathrm{m}$) mit dem Universal-Zoomokular einmal bei minimalem ($\alpha_{Schein}=48^{\circ}, f_{Okular} = 24 \mathrm{mm}$) und maximalem ($\alpha_{Schein}=68^{\circ}, f_{Okular} = 8 \mathrm{mm}$) Zoom berechnet werden.
+\begin{equation}
+t_{minZoom} = \frac{\frac{24 \cdot 10^{-3} \mathrm{m}}{3.35 \mathrm{m}}\cdot \frac{4}{15}\pi + 8.98 \cdot 10^{-3}}{7.04\cdot 10^{-5} \frac{1}{\mathrm{s}}} \approx 213 \mathrm{s}
+\end{equation}
+\begin{equation}
+t_{maxZoom} = \frac{\frac{8 \cdot 10^{-3} \mathrm{m}}{3.35 \mathrm{m}}\cdot \frac{17}{45}\pi + 8.98 \cdot 10^{-3}}{7.04\cdot 10^{-5} \frac{1}{\mathrm{s}}} \approx 168 \mathrm{s}
+\end{equation}
+
+\section{Aufgabe 6}
+Damit die beiden Sterne eines visuellen Doppelsterns noch unterschieden werden können, muss das \textbf{Rayleigh-Kriterium} gelten:
+\begin{equation}
+\beta \approx 1.22\frac{\lambda}{d}
+\end{equation}
+Hier ist $\beta$ der von der Erde aus gesehene Winkel zwischen den beiden Sternen, $\lambda$ die Wellenlänge des Lichts und $d$ der Durchmesser des Teleskops. Wenn zwei Sterne unter einem kleineren Winkel erscheinen, können sie nicht mehr auseinander gehalten werden.
+Es gibt auch noch das empirisch gefundene \textbf{Dawes-Kriterium}:
+\begin{equation}
+\beta \approx \frac{12''}{d}
+\end{equation}
+wobei $d$ der Durchmesser des Teleskops in cm ist.
+\\
+Das Sichtfeld berechnet sich aus:
+\begin{equation}
+\alpha = \frac{f_{Okular}}{f_{Teleskop}}\cdot \alpha_{Schein}
+\end{equation}
+\begin{enumerate}
+\item
+50 cm - Teleskop
+$\alpha_{min} = 0.16^{\circ}$
+$\alpha_{max} = 0.34^{\circ}$
+\item
+40 cm - Teleskop
+$\alpha_{min} = 0.14^{\circ}$
+$\alpha_{max} = 0.29^{\circ}$
+\item
+APO - Refraktor
+$\alpha_{min} = 0.68^{\circ}$
+$\alpha_{max} = 1.43^{\circ}$
+\end{enumerate}
+
+
+
+
+Es gilt für die scheinbare Helligkeit und bei konstantem Abstand: 
+\begin{equation}
+m_2 - m_1 = 2.5\cdot \log(\frac{L_1}{L_2}). 
+\end{equation}, 
+wobei $m_1, m_2$ die scheinbaren Helligkeiten und $L_1, L_2$  die Leuchtkräfte der beiden Sterne im gleichem Abstand zum Beobachter sind.
+
+Durch Umformung ergibt sich: 
+\begin{equation}
+\frac{L_1}{L_2} = 10^{2.5 \cdot (m_2 - m_1)}. 
+\end{equation}
+
+Für ein Doppelstern mit den scheinbaren Helligkeiten $m_1$ und $m_2$ ergibt sich also: 
+Die Gesamtleuchtkraft ergibt sich durch Addition der einzelnen Leuchtkräfte und die Gesamtmagnitude nach Umrechnung der Gesamthelligkeit. 
+
+\begin{equation}
+L_{ges} = L_1 + L_2 = L_1 \cdot (1 + \frac{L_2}{L_1}) = L_1 \cdot (1 + 10^{2.5 \cdot (m_1 - m_2)}). 
+\end{equation}
+
+Für die Gesamtmagnitude ergibt sich:
+\begin{equation}
+m_{ges} = m_1 - 2.5\cdot \log(\frac{L_{ges}}{L_1}) = m_1 - 2.5\cdot \log(1 + 10^{2.5 \cdot (m_1 - m_2)}).
+\end{equation}

@@ -1,0 +1,39 @@
+\section{Ergebnisse}
+Da am Messtag zwar die Sonne gut sichtbar war und deren Azimut problemlos bestimmt werden konnte, allerdings der Fernsehturm aufgrund von Dunst nicht sichtbar war, konnte leider kein vollständiger Datensatz aufgenommen werden. Aus diesem Grund wird die Auswertung mit von einer früheren Gruppe erhobenen Daten ausgeführt. \\
+Bei der Kalibrierung des Theodoliten war die Einstellung mit der Libelle schon so gut, dass mit dem in den Methoden beschrieben Algorithmus keine wesentliche Verbesserung der Ausrichtung erreicht werden konnte. \\
+Bei der Messung des Sonnenazimuts trat das Problem auf, dass die Sonne nach einer Messung sehr schnell aus dem Gesichtsfeld verschwunden war, sodass sie wieder gesucht und eingestellt werden musste. \\
+In der Tabelle \ref{sun} ist die Tabelle mit den ausgewerteten Messungen des Sonnenazimuts zu finden, in Tabelle \ref{mess_turm} sind die Werte für den gemessenen Turmazimut aufgelistet. Zunächst wird durch einfaches Mitteln der mittlere relative Turmazimut bestimmt. Dieser ergibt sich zu 117.6731 $^\circ$, mit einem Standardfehler von $ 0.0000972 \ ^\circ \approx 0.0001 \ ^\circ$. Dieser Wert wird nun für die Berechnung des Sonnenazimuts verwendet. Dieser ergibt sich für die einzelnen Messungen wie in Tabelle \ref{sonnenaz}\ dargestellt. \\
+Über den beobachteten relativen Sonnenazimut kann nun mittels 
+\begin{equation}
+a_{Turm,abs} = a_{Turm, rel} - a_{Sonne,rel} + a_{Sonne,abs} 
+\end{equation}
+der absolute Turmazimut berechnet werden. 
+Hierbei ergeben sich die folgenden Werte: 
+\begin{table}[h!]
+\centering
+\begin{tabular}{c}
+Absoluter Turmazimut ($^\circ$)\\
+\hline
+267.648654956 \\
+267.649734349 \\
+267.650203207 \\
+267.649674697 \\
+267.647492394 \\
+267.648884494 \\
+267.646924116 \\
+267.646039568 \\
+\end{tabular}
+\caption{Gemessene Werte für den Turmazimut}
+\end{table}
+
+Für den Fehler des absoluten Turmazimuts wird eine Fehlerfortpflanzung verwendet, die sich aus der Formel für den Turmazimut ergibt: 
+\begin{equation}
+A_{Turm} = A_{Turm, rel} + \mathrm{Offset}_A, 
+\end{equation}
+wobei $A_{Turm}$ der absolute Turmazimut, $A_{Turm, rel}$ der absolute relative Turmazimut bestimmt durch Messung und Offset$_A$ der aus Tabellenwerten und der Sonnenmessung bestimmte Azimut des (willkürlich) gewählten Nullpunktes des Theodoliten ist. 
+Da $A_{Turm, rel}$ mit einem Fehler $0.0000972 \ ^\circ$ und Offset$_A$ mit einem Standardfehler von $0.00053 ^\circ$ bestimmt wurde, ergibt eine Fehlerfortpflanzung: 
+\begin{equation}
+\delta A_{Turm} = \sqrt{(\frac{\partial A_{Turm}}{\partial A_{Turm, rel}})^2 + (\frac{\partial A_{Turm}}{\partial \mathrm{Offset}_A}})^2 = \sqrt{\delta A_{Turm, rel}^2 + \delta (\mathrm{Offset}_A)^2} = (5.39 \cdot 10^{-4})\ ^\circ \approx 0.0006\ ^\circ,
+\end{equation}
+da sich die beiden Ableitungen im Quadrat jeweils zu 1 ergeben.
+Aus diesen Werten ergibt sich ein gemittelter Wert von $267.6485 \pm 0.0006\  ^\circ = 267 ^\circ 38 \mathrm{'} 54.6 \mathrm{''} \pm 2.2 \mathrm{''}$ für den Azimut des vermessenen Turms. \\
