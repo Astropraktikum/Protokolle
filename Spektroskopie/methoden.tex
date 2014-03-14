@@ -1,19 +1,19 @@
 \section{Methoden}
 
 \subsection{Allgemeine Funktionsweise eines Spektrographen}
-Mit Hilfe eines Spektrographen kann man Licht in seine Farben zerlegen. Dabei besteht ein Spektrograph im Wesentlichen aus folgenen Komponenten:
+Mit Hilfe eines Spektrographen kann man Licht in seine Farben zerlegen. Dabei besteht ein Spektrograph im Wesentlichen aus folgenden Komponenten:
 
 \begin{itemize}
 
 \item Teleskop: Das Teleskop wird benötigt, um Licht zu sammeln und es zu fokussieren.
 
-\item Spalt: Der Spalt schirmt unerwünschte Störquellen ab und sorgt dafür, dass am Dispersionselement ankommende Strahlung im besten Fall von einem Punkt ausgeht, da sich sonst die Auflösung verringert. Dabei kann die Spaltbreite allerdings nicht belibig klein gewählt  werden, da dadurch natürlich auch die Intensität des Lichts abnimmt. Deshalb muss hier ein Optimum gefunden werden.
+\item Spalt: Der Spalt schirmt unerwünschte Störquellen ab und sorgt dafür, dass am Dispersionselement ankommende Strahlung im besten Fall von einem Punkt ausgeht, da sich sonst die Auflösung verringert. Dabei kann die Spaltbreite allerdings nicht beliebig klein gewählt  werden, da dadurch natürlich auch die Intensität des Lichts abnimmt. Deshalb muss hier ein Optimum gefunden werden.
 
 \item Kollimator: Der Kollimator ist eine Linse, die aus dem einfallenden Licht paralleles Licht erzeugt.
 
 \item Dispersionselement: Das Dispersionselement ist der Hauptbestandteil des Spektrographen. Es trennt das Licht in Abhängigkeit von der Frequenz. Dabei kann es ein Prisma, oder auch ein Gitter sein. (Das Prisma trennt das Licht auf Grund der Frequenzabhängigkeit der Brechung, während die Trennung beim Gitter durch Interferenzeffekte hervorgerufen wird.)
 
-\item Kamera-Objektiv: Das Kamera-Objektiv wird benötigt, um das durch das Dispersionselement erzeugte Spektrum auf den CCD-Detektor abbzubilden.
+\item Kamera-Objektiv: Das Kamera-Objektiv wird benötigt, um das durch das Dispersionselement erzeugte Spektrum auf den CCD-Detektor abzubilden.
 
 \item CCD-Detektor: Der CCD-Detektor nimmt das Bild auf und digitalisiert es.
 
@@ -132,110 +132,76 @@ Um diese Überlagerungen aufzuspalten, wird ein Echelle-Spektrograph verwendet.
 \label{fig:104}
 \end{figure}
 
-fuck
+\begin{table}
+		\includegraphics[width=.9\textwidth]{images/Tabelle101}
+\caption{ Eigenschaften des im Praktikum verwendeten Echelle-Spektrographen }
+\label{tab:Echelle}
+\end{table}
 
+Das zusätzliche Element eines Echelle-Spektrographen ist ein weiteres Beugungsgitter, das allerdings senkrecht zur Beugungsrichtung des ersten Gitters angebracht wird. Dadurch spalten sich die z.B. horizontal verschmierten Beugungsordnungen in vertikaler Richtung auf und das Spektrum kann mit Hilfe eines CCD-Chips und anschließender Reduktion der Daten erzeugt werden. Da $ \alpha + \beta = 2 \Theta $ (siehe Abb. \ref{fig:102}), folgt mit der zugehörigen als Blaze-Wellenlänge bezeichneten Wellenlänge $ \lambda_n^0 $:
 
-\subsection{Vorübungen (Werden noch in andere Kapitel eingefügt! Hier nur Lager! Also bitte nicht ändern!!! :-) }
-
-\subsubsection{Vorübung 4}
-Es gilt:
 \begin{equation}
-R_{Spalt} = \frac{n\cdot f_{Koll}}{d\cdot b\cdot cos \alpha}\cdot \lambda
-\end{equation}
-Ersetze $\lambda$ durch $\lambda_n^0$:
+n \lambda_n^0 = d ( \sin(\alpha) + \sin(\beta) ) \vert_{\alpha + \beta = 2 \Theta} = d ( \sin(\alpha) + \sin(2 \Theta - \alpha) )
+\end{equation} 
+
+Ersetzt man $\lambda$ aus \eqref{form:Auflösung} durch $ \lambda_n^0 $, erhält man laut \cite{ronomischesPraktikum} eine sehr gute Näherung für die Auflösung $ R_{Echelle} $. Das Ersetzen liefert:
+
 \begin{equation}
-R_{Echelle} = \frac{n\cdot f_{Koll}}{d\cdot b\cdot cos \alpha}\cdot \frac{d}{n}[sin \alpha + sin(2\Theta-\alpha)] = \frac{f_{Koll}}{b}\cdot [tan \alpha + \frac{sin(2\Theta-\alpha)}{cos \alpha}]
-\label{blabla}
+R_{Echelle} = \frac{n\cdot f_{Koll}}{d\cdot b\cdot cos \alpha}\cdot \frac{d}{n}[sin \alpha + sin(2\Theta-\alpha)] = \frac{f_{Koll}}{b}\cdot \left[tan \alpha + \frac{sin(2\Theta-\alpha)}{cos \alpha}\right]
+\label{form:R_Echelle}
 \end{equation}
-Dieser Term enthält nur Variablen, die sich aus dem Versuchsaufbau als konstant ergeben. 
-Setze Tabellenwerte ein:
+Dieser Term enthält nur Variablen, die sich aus dem Versuchsaufbau als konstant ergeben. Damit ergibt sich $ R_{Echelle} $ mittels Einsetzen der Werte aus Tabelle \ref{tab:Echelle} zu:
+
 \begin{equation}
-R_{Echelle} = \frac{100 \cdot 10^{-3}m}{25 \cdot 10^{-6}m}\cdot [tan (73.2^{\circ}) + \frac{sin(53.8^{\circ})}{cos (73.2^{\circ})}] \approx 24416
+R_{Echelle} = \frac{100 \cdot 10^{-3}m}{25 \cdot 10^{-6}m}\cdot \left[tan (73.2^{\circ}) + \frac{sin(53.8^{\circ})}{cos (73.2^{\circ})}\right] \approx 24416
 \end{equation}
 
-\subsubsection{Vorübung 5}
-Ersetze Größen aus Gleichung (\ref{blabla}) durch die kameraseitigen Größen ($b \rightarrow 2b_{Pixel}$) aus dem Nyquist-Kriterium:
+\subsection{Auflösung des CCD-Chips}
+Die gesamte Auflösung des Aufbaus ist natürlich nur ungefähr so gut, wie das Bauteil mit der schlechtesten Auflösung. Deshalb ist es nur dann sinnvoll die Auflösung eines Bauteils zu verbessern, wenn alle anderen eine ähnliche oder bessere Auflösung besitzen. Ist dies nicht der Fall, sollten zuerst die schlechteren Bauteile verbessert werden. Daher ist es auch sinnvoll sich über die Auflösung des CCD-Chips Gedanken zu machen.\\
+
+Das Nyquist-Kriterium besagt nach \cite{ronomischesPraktikum}, dass das räumliche Auflösungselement des CCDs durch die zweifache Pixelbreite $ b_{Pixel} $ gegeben ist. Ersetzt mal also aufgrund des Nyquist-Kriteriums die Größe b durch $ 2b_{Pixel} $, ergibt sich:
+
 \begin{equation}
-R_{CCD} = \frac{f_{Kamera}}{2b_{Pixel}}\cdot [tan \beta + \frac{sin(2\Theta-\beta)}{cos \beta}]
+R_{CCD} = \frac{f_{Kamera}}{2b_{Pixel}}\cdot \left[tan \beta + \frac{sin(2\Theta-\beta)}{cos \beta}\right]
 \end{equation}
-Setze Tabellenwerte ein:
+
+Einsetzen von Tabellenwerten aus \ref{tab:Echelle} liefert:
+ 
 \begin{equation}
-R_{CCD} = \frac{150\cdot10^{-3}m}{18\cdot10^{-6}m}\cdot [tan (53.8^{\circ}) + \frac{sin(73.2^{\circ})}{cos (53.8^{\circ})}] \approx 25000
+R_{CCD} = \frac{150\cdot10^{-3}m}{18\cdot10^{-6}m}\cdot \left[tan (53.8^{\circ}) + \frac{sin(73.2^{\circ})}{cos (53.8^{\circ})}\right] \approx 25000
 \end{equation}
-Die Auflösung der CCD-Kamera ist in der gleichen Größenordnung wie die des Spektrographen. 
 
-
-
+Also ist die Auflösung der CCD-Kamera optimalerweise in der gleichen Größenordnung wie die des Spektrographen.
+			
 \subsection{Durchführung der Messung}
-Leon ist voll schwool
+Die Hauptaufgabe dieses Experiments war es ein Sonnen- und ein Sternspektrum aufzunehmen und auszuwerten. Im folgenden wird ausgeführt, wie dabei vorgegangen wurde.
+
+\subsubsection{Messung eines Sonnenspektrums}
+
+Testlampe
+
+Sonnenspektrum
+
+Testlampe
+
+Wieso das Teleskop dabei unter keinen Umständen auf die Sonne zeigen darf.
+
+\subsubsection{Messung eines Sternspektrums}
+
+Unbekanntes Objekt im Sucher suchen, sodass mit Kamera sichbar.
+
+45s Aufnahme mit ThAr-Testlampe
+
+5min Aufn. Darkframe
+
+5min Aufn. Sternsp.
+
+45s Aufnahme mit ThAr-Testlampe
+
+
+
 
 \subsection{Datenreduktion}
 Um die aufgenommenen Spektren am Computer untersuchen zu können, müssen sie zunächst kalibriert und reduziert werden. Dies wurde in diesem Versuch mit dem Programmpaket MIDAS (Munich Image Data Analysis System) durchgeführt. Zunächst wurden die Beugungsordnungen und deren Position auf dem CCD-Chip identifiziert. Dazu mussten mehrere Kalibrationen mit verschiedenen angegebenen Anzahlen von Beugungsordnungen durchgeführt werden, bis alle Beugungsordnungen korrekt identifiziert wurden. Der zweite Schritt bestand darin, den Pixeln auf dem CCD-Chip die entsprechenden Wellenlängen zuzuordnen. Dazu wurde das aufgenommene Spektrum der ThAr-Lampe mit einem Referenzspektrum verglichen, indem zwei im Referenzspektrum gegebene Linien und deren Beugungsordnungen in dem aufgenommenen Spektrum markiert wurden. Anhand dieser Daten konnte MIDAS dann die Wellenlängenkalibration durchführen.\
 Die eigentliche Reduktion der Daten wurde danach vorgenommen. In der Reduktion werden CCD-Effekte (Dunkelstrom, überbelichtete Pixel aufgrund von hochenergetischer kosmischer Strahlung) und in dem optischen Aufbau entstehendes Streulicht von der Aufnahme entfernt. Weiterhin wird eine Wellenlängenkalibration anhand des ThAr-Vergleichsspektrums durchgeführt und die einzelnen Beugungsordnungen extrahiert und in eindimensionale Datenarrays umgewandelt ('rebinning'). Es ist außerdem notwendig, den Einfluss der Blaze-Funktion durch eine Flatfield-Korrektur zu entfernen, um ein lückenloses Spektrum zu erzeugen. Schließlich werden noch die einzelnen Beugungsordnungen zu einem einzelnen Spektrum zusammengefügt und das kontinuierliche Spektrum auf eins normiert. Die Normierung wurde für unsere Messung jedoch nicht durchgeführt.  
 
-\section{Auswertung}
-\subsection{Bestimmung der Auflösung}
-Aus dem aufgenommenen Spektrum der ThAr-Lampe kann empirisch eine Auflösung bestimmt werden, indem für mehrere Linien der Quotient aus Wellenlänge und Halbwertsbreite bestimmt und gemittelt wird. Dies wurde in MIDAS durchgeführt, indem über die Peaks eine Gaußfunktion gefittet wurde. Die erhaltenen Daten sind in Tabelle \ref{tab:3a}, Seite  \pageref{tab:3a} enthalten. Der Wert wurde also über die Formel
-\begin{equation}
-R_{Emp} = \frac{\lambda}{b}
-\end{equation}
-bestimmt, wobei $\lambda$ die Wellenlänge und $b$ die Halbwertsbreite ist. Der aus diesen Werten bestimmte Mittelwert mit Standardabweichung ergibt sich zu:
-\begin{equation}
-R_{Emp} = 13663.3 \pm 2445.8
-\end{equation}
-Dieser Wert lässt sich auch von MIDAS direkt berechnen, wobei MIDAS das Ergebnis
-\begin{equation}
-R_{Emp} = 12547.7 \pm 3398.3
-\end{equation}
-ausgibt. Es ist anzunehmen, dass MIDAS eine weitaus größere Anzahl von Linien für die Berechnung des Werts verwendet, deswegen ist dieser Wert trotz der größeren Standardabweichung als genauer anzunehmen.
-\\
-Es wurden bereits aus theoretischen Überlegungen Auflösungen für das Spektrometer und die CCD-Kamera bestimmt:
-\begin{equation}
-R_{Echelle} = 24416
-\end{equation}
-\begin{equation}
-R_{CCD} =  25000
-\end{equation}
-Man sieht, dass die empirisch bestimmte Auflösung zwar in der gleichen Größenordnung, aber um ca. einen Faktor 2 kleiner ist.\
-Dies ist vor allem dadurch begründet, dass die Kollimatorlinse nicht 'perfekt' ist, also verschiedene Wellenlängen unterschiedlich stark bricht. Dadurch verändert sich die Brennweite der Linse je nach Wellenlänge und das Bild wird unscharf.
-
-\subsection{Auswertung der Spektren}
-\subsubsection{Die Harvard-Klassifikation}
-Die folgenden Informationen wurden entnommen aus \cite{ttunen}:\\
-Sterne können anhand ihres Spektrums in verschiedene Typen eingeteilt werden. Diese Einteilung heißt Harvard-Klassifikation und ordnet Sterne in die Klassen O,B,A,F,G,K, oder M ein (fränkischer, geschlechtsneutraler Merkspruch: 'Ohne Bier ausm Fass gibts ka Maß'). Eine Einteilung der Sterne in diese Klassen ist anhand des Vorhandenseins bestimmter Absorptionslinien möglich. Der Unterschied zwischen Spektren von verschiedenen Sternen ist vor allem durch die Temperatur der Sterne bedingt. Die Linien werden durch Absorption von Photonen durch die Elektronen der Atome in der stellaren Atmosphäre erzeugt. So wird z.B. die Helium I - Linie durch Absorption von Photonen durch He-Atome im angeregten Zustand erzeugt. Der Übergang vom Grundzustand in den angeregten Zustand ist durch Photonen aus dem sichtbaren Spektrum nicht möglich. Um die He-Atome anzuregen, muss die Temperatur aber entsprechend hoch sein, sodass diese Linie in kalten Sternen nicht zu sehen ist. Bei höherer Temperatur sind auch mehr Atome im angeregten Zustand, womit mehr Photonen absorbiert werden und die Linie eine stärkere (bzw. niedrigere) Intensität erhält. Wenn die Temperatur weiter ansteigt, werden die He-Atome jedoch ionisiert und können daher keine Photonen mehr absorbieren, womit die Intensität der Linie wieder abnimmt (bzw. größer wird). Mit diesen Mechanismen lässt sich auch das Verhalten anderer Linien (Ca I, He II, Fe I) erklären. Bei Molekülen (z.B. TiO) gibt es so viele Übergänge, dass sie im Spektrum nicht mehr unterschieden werden können und als durchgängiges Absorptionsband erscheinen. Eine graphische Übersicht ist in Abb. \ref{fig:Harvard} dargestellt.
-\\
-Anhand der Absorptionslinien im Spektrum kann man nun einige Kriterien zur Einteilung angeben:
-\begin{itemize}
-\item Wenn das Spektrum nur wenige, dafür sehr intensive Linien zeigt, ist der Stern heiß, also in den Klassen O, B oder A.
-\item Wenn das Spektrum sehr viele Linien zeigt, ist der Stern kalt, also in den Klassen F, G, K oder M.
-\end{itemize}
-
-Kalte Sterne zeigen viele Linien in ihrem Spektrum, da Elemente wie Eisen oder Calcium nur wenig Energie für die Übergänge zwischen Energieniveaus benötigen und aufgrund der großen Anzahl von Elektronen auch viele Übergänge besitzen. Bei heißen Sternen sind diese Atome bereits ionisiert und es dominieren die Übergänge von Wasserstoff und Helium.
-
-\begin{table}
-\centering
-\begin{tabular}{c|c|c|c|c|c|c}
-
- & He II & He I & Fe II & Ca I & G-Band & TiO-Band \\ 
-\hline 
-O & • & • &  &  &  &  \\ 
-\hline 
-B &  & • &  &  &  &  \\ 
-\hline 
-A &  &  &  &  &  &  \\ 
-\hline 
-F &  &  & • &  &  & \\ 
-\hline
-G &  &  &  & • & • &  \\ 
-\hline 
-K &  &  &  & • &  &  \\ 
-\hline 
-M &  &  &  & • &  & • \\ 
-\end{tabular}
-\caption{Existenz von Absorptionslinien nach Spektralklasse}
-\label{tab:Spektral}
-\end{table}
-
-Mit diesen beiden Kriterien und den in Tabelle \ref{tab:Spektral} dargestellten Linien kann man Sterne sehr gut anhand ihres Spektrums in Spektraltypen einordnen. Da die Übergänge zwischen Spektraltypen teilweise fließend sind, ist die so gefundene Einordnung aber manchmal nicht eindeutig und es muss eine gründlichere Untersuchung durchgeführt werden, für die Zwecke des Praktikums ist dies aber ausreichend.
-
-\subsubsection{Untersuchung des Sonnenspektrums}
