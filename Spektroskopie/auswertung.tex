@@ -22,7 +22,7 @@ R_{Echelle} = 24416
 R_{CCD} =  25000
 \end{equation}
 Man sieht, dass die empirisch bestimmte Auflösung zwar in der gleichen Größenordnung, aber um ca. einen Faktor 2 kleiner ist.\
-Dies ist vor allem dadurch begründet, dass die Kollimatorlinse nicht 'perfekt' ist, also verschiedene Wellenlängen unterschiedlich stark bricht. Dadurch verändert sich die Brennweite der Linse je nach Wellenlänge und das Bild wird unscharf.
+Dies ist vor allem dadurch begründet, dass die Kollimatorlinse nicht 'perfekt' ist, also verschiedene Wellenlängen unterschiedlich stark bricht. Dadurch verändert sich die Brennweite der Linse je nach Wellenlänge und das Bild wird unscharf. Eine Verbesserung der tatsächlichen Auflösung wäre also nur durch eine bessere, d.h. farbtreuere Linse möglich, dies würde aber die Kosten für den Spektrographen entsprechend hochtreiben.
 
 \subsection{Auswertung der Spektren}
 \subsubsection{Die Harvard-Klassifikation}
@@ -76,7 +76,7 @@ Aus den Daten wurde der Mittelwert und die Standardabweichung der Verschiebung z
 \begin{equation}
 \overline{\Delta\lambda} = -0.021 \pm 0.086
 \end{equation}
-berechnet. Der Wert ist sehr klein und hat eine vergleichsweise große Standardabweichung. Er liegt damit im Bereich der Messgenauigkeit nahe des erwarteten Werts von 0, wobei hier natürlich eigentlich die elliptische Erdbahn mit einbezogen werden müsste.
+berechnet. Der Wert ist sehr klein und hat eine vergleichsweise große Standardabweichung. Er liegt damit im Bereich der Messgenauigkeit nahe des erwarteten Werts von 0, wobei hier natürlich eigentlich die elliptische Erdbahn mit einbezogen werden müsste. Für eine genauere Bestimmung des Werts müsste eine weitaus größere Zahl an Linien ausgewertet werden.
 \\
 \\
 Weiterhin wurden im Sonnenspektrum und in den Spektren von zwei weiteren Sternen mit bekannter Klassifikation die Äquivalentbreiten von drei Linien mittels MIDAS bestimmt. Die Ergebnisse sind in Tabelle \ref{tab:Aequivalentbreite} eingetragen.
@@ -192,11 +192,11 @@ Bei $5411.52 \AA$ ist keine HeII-Linie identifizierbar, der Stern kann also kein
 Die HeI-Linie bei $4026.20 \AA$ ist eindeutig erkennbar. Daraus lässt sich nun schließen, dass der Stern innerhalb der Spektralklasse B einzuordnen ist.
 
 \newpage
-\subsubsection{Messung der Radialgeschwindigkeit}
+\subsubsection{Bestimmung der Radialgeschwindigkeit}
 Im Spektrum des gemessenen Sterns wurden mehrere Linien identifiziert und mit den theoretischen Wellenlängen verglichen, um die Dopplerverschiebung zu bestimmen. Hierbei sind alleinstehende und schmale Linien zu bevorzugen, weil sich durch die Verschiebung sonst Linien überlagern könnten.\
 Die Geschwindigkeiten wurden mit der relativistischen Dopplerformel (die klassische Formel wäre auch ausreichend gewesen, hat jedoch zunächst absurde Ergebnisse geliefert, was evtl. an fehlerhafter Eingabe im Rechner lag)
 \begin{equation}
-f_B = f_Q \sqrt{\frac{c+v}{c-v}} \Leftrightarrow v = \frac{f_B^2 - f_Q^2}{f_B^2 + f_Q^2} \cdot c = \frac{\lambda_Q^2 - \lambda_B^2}{\lambda_B^2 - \lambda_Q^2}\cdot c
+f_B = f_Q \sqrt{\frac{c+v}{c-v}} \Leftrightarrow v = \frac{f_B^2 - f_Q^2}{f_B^2 + f_Q^2} \cdot c = \frac{\lambda_Q^2 - \lambda_B^2}{\lambda_B^2 + \lambda_Q^2}\cdot c
 \end{equation}
 wobei die Größen mit Index B für den Betrachter und Q für die Quelle stehen.\
 Die Ergebnisse sind in Tabelle \ref{tab:Radial} dargestellt.
@@ -219,7 +219,7 @@ Aus den berechneten Geschwindigkeiten lässt sich ein Mittelwert mit Standardabw
 \begin{equation}
 \overline{v} = 10.1 \pm 15.6 \ \mathrm{km/s}
 \end{equation}
-Erstens ist die Standardabweichung offensichtlich sehr groß, zweitens müsste der Mittelwert wohl eher betragsmäßig bestimmt werden. ??????????????????\
+Die Standardabweichung ist offensichtlich sehr groß, was vor allem daran liegt, dass nur wenige Linien ausgewertet wurden und der Fit in MIDAS auch nur begrenzte Genauigkeit hat. Vor allem treten sowohl positive als auch negative Verschiebungen auf, weswegen aus diesen Ergebnissen keine klare Erkenntnis gewonnen werden kann. 
 Weiterhin muss gesagt werden, dass die Verschiebung sich aus mehreren Komponenten zusammensetzt, so bewegt sich nicht nur der Stern radial von der Erde weg, sondern auch die Sternwarte wegen der Erddrehung, die Erde bewegt sich um die Sonne, das Sonnensystem um das galaktische Zentrum und die Milchstraße relativ zur Galaxie des Sterns. Die Bestimmung der Geschwindigkeit des Sterns relativ zur Erde ist also nicht so einfach durchzuführen. 
 
 
