@@ -1,0 +1,2 @@
+#!/bin/sh
+rm *.log *.aux *.lof *.lot *.out *.synctex.gz *.toc

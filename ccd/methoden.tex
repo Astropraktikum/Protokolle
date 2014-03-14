@@ -1,12 +1,13 @@
 \section{Methoden}
 \subsection{Halbleiter}
-Halbleiter sind besondere Elemente mit vier Valenzelektronen, das bekannteste Beispiel hierfür ist der Halbleiter Silizium. Sie können durch Einbringen von Fremdatomen mit drei oder fünf Valenzelektronen \enquote{dotiert} werden. Die hat zur Folge, dass der dotierte Halbleiter zwar elektrisch neutral ist, sich allerdings Unregelmäßigkeiten im Metallgitter ausbilden: \\
-Wird ein Atom mit fünf Valenzelektronen eingebracht, so exisiert im regelmäßigen Siliziumgitter kein freier Platz für das Elektron, sodass es 
+Halbleiter sind besondere Elemente mit vier Valenzelektronen, das bekannteste Beispiel hierfür ist der Halbleiter Silizium. Sie können durch Einbringen von Fremdatomen mit drei (p) oder fünf Valenzelektronen (n)  \enquote{dotiert} werden. Die hat zur Folge, dass der dotierte Halbleiter zwar elektrisch neutral ist, sich allerdings Unregelmäßigkeiten im Metallgitter ausbilden, sodass ein
+Wird ein Atom mit fünf Valenzelektronen eingebracht, so exisiert im regelmäßigen Siliziumgitter kein freier Platz für das Elektron, sodass es \\
+HIER FEHLT NOCH ZEUG
 
 \subsection{Aufbau und Funktion eines CCD-Chips}
 Ein CCD-Chip setzt sich aus einer rechtecksgitterförmigen Anordnung von Halbleiterelementen, sogenannten Pixeln, zusammen. An diesen liegt eine Spannung in Sperrrichtung an, sodass zunächst kein Strom fließen kann. Wird der Halbleiter allerdings mit Photonen hinreichend großer Energie bestrahlt, so kann das Photon ein oder mehrere Paare von Elektronen und Löchern aus dem Gitter lösen, die schließlich in einem Potenzialtopf gesammelt werden. \\
-Die einzelnen Pixel sind spaltenweise gegeneinander isoliert, allerdings nicht zeilenweise. Durch Anlegen einer Sägezahnspannung an die Spalten werden die in den Potenzialtöpfen während der Beleuchtung des Chips gesammelten Elektronen während dem Ausleseprozess Zeile für Zeile in Ausleserichtung verschieben. Am Rand des Gitters befindet sich in Ausleserichtung die Ausleseelektronik, die die Ladungsmenge pro Pixel misst und digitalisiert. Dieser Ausleseprozess kann nicht immer sämtliche Ladung um ein Pixel verschieben, sodass er eine Quelle von Bildfehlern darstellt. \\
-Dieser Ausleseprozess finden nicht instantan statt, sondern erfordert eine gewisse Zeitspanne, welche zu verschiedenen Bildfehlern führt. 
+Die einzelnen Pixel sind spaltenweise gegeneinander isoliert, allerdings nicht zeilenweise. Durch Anlegen einer Sägezahnspannung an die Spalten werden die in den Potenzialtöpfen während der Beleuchtung des Chips gesammelten Elektronen während dem Ausleseprozess Zeile für Zeile in Ausleserichtung verschoben. Am Rand des Gitters befindet sich in Ausleserichtung die Ausleseelektronik, die die Ladungsmenge pro Pixel misst und digitalisiert. Dieser Ausleseprozess kann nicht immer sämtliche Ladungen um ein Pixel verschieben, sodass er eine Quelle von Bildfehlern darstellt. \\
+Dieser Ausleseprozess finden nicht instantan statt, sondern erfordern eine gewisse Zeitspanne, was zu verschiedenen Bildfehlern führt. 
 
 \subsection{Bildfehler und -korrekturen}
 CCD-Kameras zählen die auf den Chip auftreffenden Photonen und rechnen diese in ein Signal um. Dabei ist jedoch zunächst zu beachten, dass Photonen nicht gleichmäßig auf den Chip auftreffen, sondern zufällig verteilt. Wenn man also mehrere Bilder aufnimmt, bekommt man auch mehrere Werte für jeden Pixel. Dies wäre bei herkömmlichen, z.B. tagsüber aufgenommenen Bildern egal, da dort enorm viele Photonen auftreffen und die kleinen Variationen keinen Unterschied machen. Die Zahl der auftreffenden Photonen bei astronomischen Aufnahmen ist aber so gering, dass die zufälligen Variationen großen Einfluss nehmen.\
@@ -49,11 +50,11 @@ SNR_{result} = \frac{1}{\sqrt{\frac{1}{SNR_{image}^2} + \frac{1}{SNR_{flatfield}
 Ein letzter, wichtiger Aspekt für astronomische Aufnahmen ist der Einfluss der Lichtverschmutzung, der durch die OSR ('object-to-sky ratio') beschrieben wird. Dieser kann in städtischen Gebieten (also auch in Bamberg) sehr groß sein, ist aber für diesen Versuch irrelevant.\\
 \enquote{Blooming} und \enquote{Smear} sind zwei weitere Effekte, die bei Aufnahmen mit CCD-Chips auftreten können. 
 \enquote{Blooming} bezeichnet den Effekt, dass Pixel im CCD-Chip überbelichtet werden, sodass Elektronen in benachbarte Pixel wandern. Dies führt zu einem hellen Schein um das überbelichtete Pixel herum. \\
-Beim sogenannten \enquote{Smear} muss der Shutter deaktiviert sein. Es kommt waehrend des Auslesevorgangs zu weiterer Belichtung der Pixel, sodass in der stark belichteten Spalte ein heller Streifen wahrnehmbar ist. 
+Beim sogenannten \enquote{Smear} muss der Shutter deaktiviert sein. Es kommt während des Auslesevorgangs zu weiterer Belichtung der Pixel, sodass in der stark belichteten Spalte ein heller Streifen wahrnehmbar ist. 
 
 
 \subsection{Der Gain-Faktor}Es gilt: 
-Fuer die Berechnung des Gain-Faktors ergibt sich: \
+Für die Berechnung des Gain-Faktors ergibt sich: \
 
 \begin{equation}
 \sigma_{EL} = g \cdot \sigma_{ADU}, 
@@ -104,9 +105,9 @@ g &= \frac{N_{ADU,\ ohneBias}}{\sigma_{ADU, \ ohne}^2  \ ^{(stat)}} = \frac{\fra
 &= \frac{N_{ADU}(A) + N_{ADU}(C) - \overline{B_1} - \overline{B_2}}{\sigma_{ADU}^2(A-C) - \sigma_{ADU}^2(B_1-B_2)}.\
 \label{form:gain}
 \end{align}
-Diese Formel wir zur Berechnung des Gain-Faktors verwendet. 
+Diese Formel wird zur Berechnung des Gain-Faktors verwendet. 
 
 \subsection{Durchführung}
-In diesem Versuch soll zunächst die ideale Betriebstemperatur für den CCD-Chip ermittelt werden, die sich als Temperatur mit minimalem Dunkelstrom ergibt. Dazu werden verschiedene Temperaturen eingestellt und dann ein dark frame aufgenommen und ausgewertet. Es ist zu beachten, dass sich die Temperatur erst einpendeln muss, bevor eine Messung notwendig ist. \\
+In diesem Versuch soll zunächst die ideale Betriebstemperatur für den CCD-Chip ermittelt werden, also die Temperatur, bei der der Dunkelstrom minimal ist. Dazu werden verschiedene Temperaturen eingestellt und dann ein dark frame aufgenommen und ausgewertet. Es ist zu beachten, dass sich die Temperatur erst einpendeln muss, bevor eine Messung durchgeführt werden kann. \\
 Weiter sollen bias frames und flat fields aufgenommen werden, um hieraus einen Wert für den Gain-Faktor zu bestimmen. Dazu wird mit der CCD-Kamera das Bild eines mit einem Baustrahler weitgehend homogen ausgeleuchteten Blatts Papier an der etwa drei Meter von der Kamera entfernten Tür aufgenommen und ausgewertet. Es ist hier zu beachten, dass das Bild nicht überbelichtet sein darf, da es andernfalls zu unerwünschten Effekten wie etwa blooming kommen kann. \\
-Schließlich soll der Zusammenhang zwischen der Intensität des einfallenden Lichts und dem ADU-Output des CCD-Chips untersucht werden, indem Filter verschiedener Stärke vor der CCD-Kamera montiert werden. Für sämtliche, auch durch mehrere Filter erzeugte, Filterstärken wird die Helligkeit eines aufgenommenen LED ausgewertet. Weiter werden die angesprochenen Effekte \enquote{blooming} und \enquote{smear} untersucht. 
+Schließlich soll der Zusammenhang zwischen der Intensität des einfallenden Lichts und dem ADU-Output des CCD-Chips untersucht werden, indem Filter verschiedener Stärke vor der CCD-Kamera montiert werden. Für sämtliche, auch durch mehrere Filter erzeugte, Filterstärken wird die Helligkeit einer aufgenommenen LED ausgewertet. Weiter werden die angesprochenen Effekte \enquote{blooming} und \enquote{smear} untersucht. 

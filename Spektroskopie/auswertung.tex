@@ -158,8 +158,7 @@ Zwischen den Wellenlängen $6700-7000 \AA$ ist kein TiO-Band zu erkennen, was ei
 \caption{Position der CaI-Linie im Spektrum von Stern 2}
 \label{fig:stern2_CaI}
 \end{figure}
-Bei der Wellenlänge $4226.74 \AA$ ist die CaI-Linie klar identifizierbar, weswegen der Stern nicht in die Klasse F eingeordnet werden kann.
-\\
+Bei der Wellenlänge $4226.74 \AA$ ist die CaI-Linie gut identifizierbar, jedoch relativ schwach.
 \begin{figure}
 \includegraphics[height=.4\textheight]{images/stern2_G-Band.png}
 \caption{Mögliche Position des G-Bandes im Spektrum von Stern 2}
@@ -167,7 +166,12 @@ Bei der Wellenlänge $4226.74 \AA$ ist die CaI-Linie klar identifizierbar, weswe
 \end{figure}
 In der Umgebung der Wellenlänge $4310 \AA$ ist kein G-Band zu erkennen, weshalb der Stern kein G-Stern sein kann.
 \\
-Damit bleibt nur noch die Klasse K als mögliche Einteilung übrig.
+\begin{figure}
+\includegraphics[height=.4\textheight]{images/stern2_H_beta.png}
+\caption{Position der $H_\beta$-Linie im Spektrum von Stern 2}
+\label{fig:stern2_H_beta}
+\end{figure}
+Die $H_\beta$-Linie bei $4861.34 \AA$ ist sehr intensiv und klar zu erkennen. Dies spricht, obwohl eine CaI-Linie zu erkennen ist, dafür, dass der Stern relativ heiß sein muss und deswegen kein K-Stern ist. Es ist also zu vermuten, dass der Stern ein später F-Stern ist, möglicherweise auch ein früher G-Stern. Dies lässt sich rein anhand des G-Bandes nicht genau sagen, da die Grenzen zwischen den Spektralklassen fließend sind.
 
 \paragraph{Stern 3}
 \begin{figure}
@@ -220,6 +224,22 @@ Aus den berechneten Geschwindigkeiten lässt sich ein Mittelwert mit Standardabw
 \overline{v} = 10.1 \pm 15.6 \ \mathrm{km/s}
 \end{equation}
 Die Standardabweichung ist offensichtlich sehr groß, was vor allem daran liegt, dass nur wenige Linien ausgewertet wurden und der Fit in MIDAS auch nur begrenzte Genauigkeit hat. Vor allem treten sowohl positive als auch negative Verschiebungen auf, weswegen aus diesen Ergebnissen keine klare Erkenntnis gewonnen werden kann. 
-Weiterhin muss gesagt werden, dass die Verschiebung sich aus mehreren Komponenten zusammensetzt, so bewegt sich nicht nur der Stern radial von der Erde weg, sondern auch die Sternwarte wegen der Erddrehung, die Erde bewegt sich um die Sonne, das Sonnensystem um das galaktische Zentrum und die Milchstraße relativ zur Galaxie des Sterns. Die Bestimmung der Geschwindigkeit des Sterns relativ zur Erde ist also nicht so einfach durchzuführen. 
+Weiterhin muss gesagt werden, dass die Verschiebung sich aus mehreren Komponenten zusammensetzt, so bewegt sich nicht nur der Stern radial von der Erde weg, sondern auch die Sternwarte wegen der Erddrehung, die Erde bewegt sich um die Sonne, das Sonnensystem um das galaktische Zentrum und die Milchstraße relativ zur Galaxie des Sterns. Die Bestimmung der Geschwindigkeit des Sterns relativ zur Erde ist also nicht so einfach durchzuführen. \\
 
+Für die Bahngeschwindigkeit der Erde um die Sonne, ergibt sich
 
+\begin{equation}
+v_{Bahn} = \frac{2 \pi r_{Erdbahn}}{1 \mathrm{a}} = \frac{2 \pi \cdot 1.496 \cdot 10^8 \mathrm{km}}{365.25 \cdot 24 \cdot 3600 \mathrm{s}} = 29.79 \frac{\mathrm{km}}{\mathrm{s}}
+\end{equation}
+
+und für die Rotationsgeschwindigkeit auf der Oberfläche der Erde erhält man:
+
+\begin{equation}
+v_{rot} = \frac{2 \pi r_{Erde}}{1 \mathrm{d}} = \frac{2 \pi \cdot 6371 \mathrm{km}}{24 \cdot 3600 \mathrm{s}} = 0.46 \frac{\mathrm{km}}{\mathrm{s}}
+\end{equation}
+
+Damit ergibt sich im Extremfall, dass sich die Geschwindigkeiten addieren, eine Geschwindigkeit von:
+
+\begin{equation}
+v_{Ges} = v_{Bahn} + v_{rot} = 30.25 \frac{\mathrm{km}}{\mathrm{s}}
+\end{equation}
