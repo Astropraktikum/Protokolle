@@ -1,6 +1,7 @@
 \section{Ergebnisse}
 Zunächst wurden bei einer Belichtungszeit von 30 Sekunden dark frames bei verschiedenen Temperaturen des Chips aufgenommen, um die ideale Betriebstemperatur des CCD zu ermitteln. Hierbei ergaben sich die in Tabelle \ref{tbl:adu_temp} dargestellten Werte, welche in Abb. \ref{fig:adu_temp} graphisch dargestellt sind. 
 \begin{figure}[h!]
+\centering
         \includegraphics[width=.9\textwidth]{plot_adu_temp2.png}
 \caption{ Auftragung von Dunkelstrom über der CCD-Temperatur }
 \label{fig:adu_temp}
@@ -10,6 +11,7 @@ Es ergibt sich also eine ideale Temperatur von etwa -15 $^\circ$ C im betrachtet
 $a = 40.0\  \mathrm{adu}, c = 0.119 \frac{1}{\mathrm{K}}, b = 124.2 \ \mathrm{adu}$. \\
 Die Aufnahme eines bias frames bei einer Belichtungszeit von 0.12 s und einer Blendenöffnung von 5.6 wird in Abb. \ref{fig:bias} dargestellt. 
 \begin{figure}[h!]
+\centering
         \includegraphics[width=.9\textwidth]{beiers_01.png}
 \caption{ Aufnahme eines bias frame }
 \label{fig:bias}
@@ -17,7 +19,7 @@ Die Aufnahme eines bias frames bei einer Belichtungszeit von 0.12 s und einer Bl
 Neben dem Rauschen im Hintergrund erkennt man mehrere senkrechte gepunktete Linien. Diese sind auf ein hot pixel in der entsprechenden Spalte zurückzuführen. Aufgrund des \enquote{schubweisen} Auslesens der Zeilen, welches  laut dem Betreuer durch Speichervorgänge in der Ausleseelektronik verursacht wird, kommt es in regelmäßigen zeitlichen Abständen zu einer Verzögerung beim Auslesen und somit zu hellen Punkten mit räumlich gleichem Abstand. Des weiteren ist ein leichter Helligkeitsgradient von links nach rechts sichtbar. Der Grund hierfür ist wahrscheinlich ein Temperaturgradient im CCD-Chip und ein somit räumlich unterschiedlicher Dunkelstrom. \\
 Es wurden insgesamt 11 bias frames aufgenommen, deren mittlerer ADU-Wert sich zu 115.6 $ \pm 1.07$ ergibt. \\
 Damit auch bei maximaler Belichtungszeit kein ueberbelichtetes Bild aufgenommen wurde, musste insgesamt ein Filter der Straerke 2048, der also nur $\frac{1}{2048}$ des Lichts transmittiert, verwendet werden. 
-Zur Bestimmung des Gain-Faktors werden zu jeder Belichtungsdauer je zwei flat fields aufgenommen und ausgewertet. Dabei ergeben sich mit der Formel ... die in Tabelle \ref{tbl:gain} dargestellten Werte. Als gemittelter Wert ergibt sich 
+Zur Bestimmung des Gain-Faktors werden zu jeder Belichtungsdauer je zwei flat fields aufgenommen und ausgewertet. Dabei ergeben sich mit der Formel \eqref{form:gain} die in Tabelle \ref{tbl:gain} dargestellten Werte. Als gemittelter Wert ergibt sich 
 \begin{equation}
 \bar{g} = 1.940 \pm 0.04 \ \frac{\mathrm{adu}}{\mathrm{e}}. 
 \end{equation}
@@ -29,6 +31,7 @@ f(x) = a \cdot x + b
 \end{equation}
 gefittet, so ergeben sich die Werte $a = (119 \pm 5.0) \cdot 10^6 \ adu$ und $b = (2.8 \pm 1.4) \cdot 10^6 \ adu$.
 \begin{figure}[h!]
+\centering
         \includegraphics[width=.9\textwidth]{adu_int_.png}
 \caption{ Auftragung des gemessenen ADU-Wertes ueber der einfallenden Lichtintensitaet }
 \label{plot:adu_int}
@@ -37,6 +40,7 @@ Problematisch ist, dass die Gerade die Punkte nahe der Null gut approximiert, di
 Schliesslich wurden wurden die Effekte \enquote{smear} und \enquote{blooming} untersucht. 
 
 \begin{figure}[h!]
+\centering
         \includegraphics[width=.4\textwidth]{blooming.png}
 \caption{ Aufnahme der Diode bei extremer Ueberbelichtung }
 \label{fig:blooming}
@@ -46,6 +50,7 @@ Zur Veranschaulichung des Smear-Effektes wurden Aufnahmen bei deaktiviertem Shut
 Bei der ersten Aufnahme zeigte sich das in \ref{fig:smear1} dargestellte Bild. 
 
 \begin{figure}[h!]
+\centering
         \includegraphics[width=.4\textwidth]{smear_unten_sebi.png}
 \caption{ Erste Aufnahme nach Belichtungsbeginn }
 \label{fig:smear1}
@@ -55,6 +60,7 @@ Zu Beginn des Auslesens sind die ersten ausgelesenen Pixel unbelichtet. Wird das
 Bei der zweiten Aufnahme ist dann ein durchgehender \enquote{smear} erkennbar, was daran liegt, dass die Pixel vor dem stark belichteten Pixel noch waerhend dem vorherhgehenden Ausleseprozess belichtet werden. Somit erscheint ein durchgehend heller Strich in der Spalte. Dies ist in Abb. \ref{fig:smear2} dargestellt. 
 
 \begin{figure}[h!]
+\centering
         \includegraphics[width=.4\textwidth]{smear.png}
 \caption{ Zweite Aufnahme }
 \label{fig:smear2}
@@ -63,6 +69,7 @@ Bei der zweiten Aufnahme ist dann ein durchgehender \enquote{smear} erkennbar, w
 Wird nun das Blatt Papier in den Strahlengang eingefuehrt, so ergibt sich die in Abb. \ref{fig:smear3} dargestellte Aufnahme. 
 
 \begin{figure}[h!]
+\centering
         \includegraphics[width=.4\textwidth]{smear_oben_frueh.png}
 \caption{ Aufnahme nach Einfuehren des Blattes }
 \label{fig:smear3}

@@ -49,11 +49,62 @@ SNR_{result} = \frac{1}{\sqrt{\frac{1}{SNR_{image}^2} + \frac{1}{SNR_{flatfield}
 Ein letzter, wichtiger Aspekt für astronomische Aufnahmen ist der Einfluss der Lichtverschmutzung, der durch die OSR ('object-to-sky ratio') beschrieben wird. Dieser kann in städtischen Gebieten (also auch in Bamberg) sehr groß sein, ist aber für diesen Versuch irrelevant.\\
 \enquote{Blooming} und \enquote{Smear} sind zwei weitere Effekte, die bei Aufnahmen mit CCD-Chips auftreten können. 
 \enquote{Blooming} bezeichnet den Effekt, dass Pixel im CCD-Chip überbelichtet werden, sodass Elektronen in benachbarte Pixel wandern. Dies führt zu einem hellen Schein um das überbelichtete Pixel herum. \\
-Beim sogenannten \enquote{Smear} werden nicht sämtliche Elektronen während dem Auslesevorgang zeilenweise verschoben, sondern ein Teil der Ladung verbleibt in den Pixeln. \\
-Beim sogenannten Smear-Effekt werden beim Auslesevorgang nicht sämtliche Elektronen, die sich in einem Pixel während der Beleuchtung gesammelt haben, pixelweise verschoben, sondern es verbleiben Elektronen in den Pixeln. Die Auswirkung davon wird in der Diskussion näher ausgeführt. 
+Beim sogenannten \enquote{Smear} muss der Shutter deaktiviert sein. Es kommt waehrend des Auslesevorgangs zu weiterer Belichtung der Pixel, sodass in der stark belichteten Spalte ein heller Streifen wahrnehmbar ist. 
 
-\subsection{Der Gain-Faktor}
-...
+
+\subsection{Der Gain-Faktor}Es gilt: 
+Fuer die Berechnung des Gain-Faktors ergibt sich: \
+
+\begin{equation}
+\sigma_{EL} = g \cdot \sigma_{ADU}, 
+\label{eins}
+\end{equation}
+\begin{equation}
+N_{EL} = g \cdot N_{ADU}
+\end{equation}
+und 
+\begin{equation}
+\sigma_{EL} = \sqrt{N_{EL}}. 
+\end{equation}
+Aus \ref{eins} ergibt sich: 
+\begin{equation}
+\sigma_{EL}^2 = N_{EL}, 
+\end{equation}
+sodass gilt: 
+\begin{equation}
+N_{EL} = g^2 \cdot \sigma_{ADU}^2 = g \cdot N_{ADU}. 
+\end{equation}
+Daraus ergibt sich: 
+\begin{equation}
+g = \frac{N_{ADU}}{\sigma_{ADU}^2}
+\end{equation}
+
+Zur möglichst genauen Berechnung des obigen Terms muss der Offset zwischen der $N_{ADU}$ und $N_{EL}$ bei der Aufnahme eines flat fields, der mittels bias frames ermittelt werden kann, herausgerechnet werden, sodass schließlich eine direkte Proportionalität zwischen $N_{ADU,\ ohneBias}$ und $N_{EL}$ besteht. 
+Da anschließend zwei systematisch gleiche Aufnahmen betrachtet werden, schreibt man: 
+\begin{equation}
+N_{ADU,\ ohneBias} = \frac{N_{ADU}(A) + N_{ADU}(C) - \overline{B_1} - \overline{B_2}}{2}, 
+\end{equation}
+wobei $\overline{B_1}$ und $\overline{B_2}$ die Mittelwerte zweier bias frames sind, die ebenfalls systematisch gleich sind. \\
+Für die Standardabweichung von $N_{ADU, ohneBias}$ ergibt sich: \\
+Sowohl für $\sigma(A-C)^2$ als auch für $\sigma(B_1 - B_2)^2$ ergibt sich nach der in der Anleitung vorgeführten Rechnung, dass:
+\begin{equation}
+\sigma_{ADU,\ flat}^2 \ ^{(stat)} = \frac{\sigma_{ADU}^2(A-C)}{2}
+\end{equation}
+sowie
+\begin{equation}
+\sigma_{ADU,\ bias}^2 \ ^{(stat)} = \frac{\sigma_{ADU}^2(B_1-B_2)}{2}.
+\end{equation}
+Da beide Standardabweichungen statistischer Natur sind, ist ihre Kovarianz Null, sodass gilt: 
+\begin{equation}
+\sigma_{ADU, \ ohne}^2  \ ^{(stat)}=  \sigma_{ADU,\ flat}^2 \ ^{(stat)} - \sigma_{ADU,\ bias}^2 \ ^{(stat)}.
+\end{equation}
+Durch Einsetzen ergibt sich nun: 
+\begin{align}
+g &= \frac{N_{ADU,\ ohneBias}}{\sigma_{ADU, \ ohne}^2  \ ^{(stat)}} = \frac{\frac{N_{ADU}(A) + N_{ADU}(C) - \overline{B_1} - \overline{B_2}}{2}}{\sigma_{ADU,\ flat}^2 \ ^{(stat)} - \sigma_{ADU,\ bias}^2 \ ^{(stat)}} &=\frac{\frac{N_{ADU}(A) + N_{ADU}(C) - \overline{B_1} - \overline{B_2}}{2}}{\frac{\sigma_{ADU}^2(A-C) - \sigma_{ADU}^2(B_1-B_2)}{2}} \nonumber\\
+&= \frac{N_{ADU}(A) + N_{ADU}(C) - \overline{B_1} - \overline{B_2}}{\sigma_{ADU}^2(A-C) - \sigma_{ADU}^2(B_1-B_2)}.\
+\label{form:gain}
+\end{align}
+Diese Formel wir zur Berechnung des Gain-Faktors verwendet. 
 
 \subsection{Durchführung}
 In diesem Versuch soll zunächst die ideale Betriebstemperatur für den CCD-Chip ermittelt werden, die sich als Temperatur mit minimalem Dunkelstrom ergibt. Dazu werden verschiedene Temperaturen eingestellt und dann ein dark frame aufgenommen und ausgewertet. Es ist zu beachten, dass sich die Temperatur erst einpendeln muss, bevor eine Messung notwendig ist. \\
