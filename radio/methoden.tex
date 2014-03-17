@@ -1,0 +1,65 @@
+\section{Methoden}
+\subsection{Aufbau eines Radioteleskops}
+Radioteleskope bestehen aus einer parabolischen Metallschüssel zur Bündelung der Radiowellen auf einen Brennpunkt. In diesem Brennpunkt befindet sich die Antenne des Teleskops. 
+\subsection{Winkelauflösung des SRT}
+Die Auflösung eines Radioteleskops ist von der Größe des verwendeten Hohlspiegels und der gemessenen Frequenz abhängig.\\
+Es gilt:
+\begin{equation}
+\alpha = 1.22\cdot\frac{\lambda}{D}
+\end{equation}
+Für das SRT in Bamberg mit $\lambda=21\,cm$ und $D=2.3\, m$ ergibt sich:
+\begin{equation}
+\alpha = 1.22\cdot\frac{21 cm}{2.3 m} = 1.22\cdot\frac{0.21 m}{2.3 m} \approx 0.11
+\label{aufloesung}
+\end{equation}
+Dies entspricht einer Winkelauflösung von $6.3^\circ$.
+\\
+Das menschliche Auge hat eine Winkelauflösung von ungefähr einer Bogensekunde (im Bogenmaß: $2.9\cdot10^{-4}$). Um mit dem Teleskop eine solche Auflösung zu erreichen, müsste das Teleskop einen Durchmesser von
+\begin{equation}
+D = 1.22\cdot\frac{\lambda}{\alpha} = 1.22\cdot\frac{0.21 m}{2.9\cdot10^-4} \approx 883 m
+\end{equation}
+haben. Die weitaus bessere Auflösung des menschlichen Auges ist darin begründet, dass Radiowellen eine um mehrere Größenordnungen höhere Wellenlänge haben.
+\subsection{Beobachtung der Sonne mit dem SRT}
+Die von der Sonne abgestrahlte Radiostrahlung besteht zum größten Teil aus Synchrotronstrahlung von Elektronen, die vom Magnetfeld der Sonne beschleunigt werden. Es ist also zu erwarten, dass die Intensität der Radiostrahlung homogen verteilt ist. Sonnenflecken weisen besonders hohe Abstrahlung im Radiobereich auf, da diese durch lokale Magnetfeldänderungen erzeugt werden. Die Sonne ist mit einem Winkeldurchmesser von ca. 30 Bogensekunden jedoch zu klein um Details mit dem SRT (siehe \eqref{aufloesung}) auflösen zu können.\\
+
+%Linienscans über die Sonne zeigen eine Intensität proportional zur von der Hauptkeule eingeschlossenen Fläche, das Intensitätsprofil ähnelt einer Gaußverteilung.
+
+Das Wien'sche Strahlungsgesetz liefert für große Wellenlängen falsche Ergebnisse, also wird hier die Rayleigh-Jeans-Näherung verwendet.
+Das Rayleigh-Jeans-Gesetz lautet für die gesamte abgestrahlte Leistung pro Fläche \footnote{\cite{Ray}}: 
+\begin{equation}
+I(\nu) d\nu = \frac{2\pi \cdot k_B \cdot T \cdot \nu^2}{c^2} d\nu. 
+\end{equation}
+Dies ergibt für $ T = 5800 K$ und $\nu = \frac{c}{\lambda} = \frac{3.00\cdot 10^8}{0.21 m} = 1.43 \cdot 10^9 Hz$ eine abgestrahlte Leistung pro Fläche und Frequenzabschnitt von: 
+\begin{equation}
+I(1.43 10^{9} Hz) = 1.14 \cdot 10^{-17} \frac{W}{m^2 \cdot Hz}.
+\end{equation}
+Da eine homogene Abstrahlung an der Sonnenoberfläche vorausgesetzt werden kann und die Leistungsentwicklung invers quadratisch mit dem Abstand geht, kommt an der Erde hiervon nur der Anteil $ (\frac{r_S}{1\ AE})^2 = (\frac{0.696 \cdot 10^{6} km}{149 \cdot 10^6 km})^2 \approx 2.18 \cdot 10^{-5} $ an, wobei $r_S$ der Sonnenradius und $ 1\ AE$ eine astronomische Einheit ist. 
+Für den Strahlungsstrom auf der Erde ergibt sich damit: 
+\begin{equation}
+S \approx 2.49 \cdot 10^{-22} \frac{W}{m^2 \cdot  Hz}.
+\end{equation}
+Dies ist eine um mehr als eine Größenordnung geringere Intensität als die gemessene. 
+Errechnet man umgekehrt die \enquote{effektive} Temperatur, also die Temperatur, die ein Schwarzkörper haben müsste, um die gleiche Intensität zu emittieren, so ergäbe sich aufgrund der Linearität von I und T bei konstanter Frequenz: 
+\begin{equation}
+T_{eff} = \frac{I_{gem}}{I} \cdot 5800 K = \frac{5 \cdot 10^{-21}}{2.49 \cdot 10^{-22}} \cdot 5800 K = 1.16 \cdot 10^5 K,
+\end{equation}
+wobei $I_{gem}$ die gemessene Intensität, $I$ die errechnete ist. 
+Die Radiostrahlung dieser Frequenz stammt vorwiegend aus der äußeren Atmosphäre der Sonne. Dort ist das solare Magnetfeld noch sehr stark, sodass sich dort freie Elektronen auf spiralförmigen Bahnen bewegen und somit Synchrotronstrahlung emittieren. 
+
+\subsection{Beobachtung der 21cm Wasserstofflinie}
+Ein Wasserstoffatom besteht aus einem Proton und Elektron, die jeweils noch einen Eigendrehimpuls (Spin) besitzen. Die Spins können parallel oder antiparallel angeordnet sein, wobei dies jeweils einen unterschiedlichen Energiezustand entspricht. Bei einem Wasserstoffatom im Grundzustand kann sich der Spin des Elektrons von parallel (zum Spin des Protons) zu antiparallel ändern. Der antiparallele Spin entspricht einem niedrigeren Energiezustand, sodass Energie als Photon, welches gerade die Wellenlänge 21 cm besitzt, abgestrahlt wird.\
+Der Energiezustand mit parallelen Spins hat jedoch eine sehr lange Lebensdauer, deswegen kann dieser Übergang nur in Gebieten mit niedrigen Temperaturen ($\sim 100K$) (damit das Atom im Grundzustand ist) und geringen Teilchendichten (sonst würde der Energiezustand durch Stöße und den dadurch erfolgenden Energieübertrag \enquote{entvölkert} werden) stattfinden. Die Sonne ist im Vergleich zu den interstellaren Wasserstoffwolken weitaus heißer und dichter, deswegen ist im Sonnenspektrum keine 21 cm - Linie zu erwarten.
+
+\section{Durchführung}
+\subsection{npoint- und Cross-Scan der Sonne}
+Aufgrund von Problemen mit der Nachführungseinrichtung des SRT 2 wurde für diesen Teil des Versuchs auf das SRT 1 zurückgegriffen.
+
+Um die aktuelle Position der Sonne zu nutzen wurden vor dem Start der Steuerungssoftware die aktuellen Sonnenkoordinaten in die Katalogdatei eingetragen.
+Es wurde ein 5x5 npoint scan um die im Katalog eingetragene Position durchgeführt. Diese Messung ergab, dass das Intensitätsmaximum um $2.6\,^\circ$ Deklination und $-5.8\,^\circ$ Elevation von der im Katalog eingetragenen Position abwich. Dieser Offset wurde in der Messung des Cross-Scan berücksichtigt um die Sonne bestmöglich abzufahren.
+Es wurde eine Komandodatei verwendet um Offsets in Azimut bzw. Elevation automatisiert anzufahren.
+\subsection{Störquellen}
+Um den möglichen Einfluss von Störquellen auf Messungen zu demonstrieren wurde zunächst der Einfluss des geostationären Rundfunksatelliten \enquote{Afristar} gemessen. Um die genaue Position des Satelliten zu bestimmen wurde ein npoint Scan durchgeführt, darauf hin wurde das Teleskop mit Frequenzen von $1440\,MHz$ bis $1500\,MHz$ in $5\,MHz$ Schritten auf Afristar gerichtet um das Spektrum des Satelliten zu ermitteln.
+Als zweite mögliche Störquelle wurden Mobiltelefone getestet. Dieses RFI Experiment wurde in Zusammenarbeit mit Gruppe 5 durchgeführt. Zwei telefonierende Mobiltelefone wurden mit einem Abstand von 2 bis 12 Metern möglichst zentral in die Hauptkeule des SRT 1 gehalten. Bei einem Abstand von 5 Metern wurde zudem zum Vergleich nur die Mobiltelefone haltende Person ohne Telefonen vermessen.
+\subsection{21 cm H-Linie}
+Über eine Breitbandmessung der 21 cm Wasserstofflinie sollte die Rotation der interstellaren Gaswolken und damit der Galaxie vermessen werden. Um eine Sichtbarkeit der Milchstraße von $0-90\,^\circ$ galaktischer Länge in der Galaktischen Ebene zu erzielen wurde die Messung von vier bis sieben Uhr am Mittwoch den 12. März 2014 durchgeführt. Auch diese Messung wurde durch eine Komandodatei automatisiert.
+
