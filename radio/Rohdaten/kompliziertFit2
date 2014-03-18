@@ -1,0 +1,9 @@
+set terminal png
+set output "vRotberR.png"
+set xlabel "R in kpc"
+set ylabel "v_Rot in km/s"
+set grid
+unset key
+set xrange [-1:9]
+set yrange [-5:250]
+plot "kompliziert" using 6:7:8 with errorbars

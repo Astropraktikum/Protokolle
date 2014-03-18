@@ -1,0 +1,10 @@
+set terminal png
+set output "sun_azimut.png"
+f(x) = a*exp(-x**2/b)+c
+plot "cross_sun/sun_azimut" using 1:3
+
+
+
+#set output "sun_elevation.png"
+#f(x)= 
+#plot "cross_sun/sun_elevation"

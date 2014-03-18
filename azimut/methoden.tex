@@ -34,7 +34,7 @@ Beim festen Äquatorialsystem liegt der Ursprung wahlweise im Beobachter oder im
 
 Das bewegliche Äquatorialsystem entspricht dem festen, bis auf den Unterschied, dass Längen- und Breitengrad Deklinationswinkel und Rektazension entspricht. 
 
-\subsection{Azimut und Deklination}
+\subsection{Azimut und Höhe}
 In einem Koordinatensystem mit einer Grundebene, welche im Fall etwa des Horizontsystems die Erdoberfläche ist, und einem dazu senkrechten Zenit, definiert man die Deklination als den Winkel zwischen Objekt und der Grundebene, sowie den Azimut als Winkel relativ zu einer ausgezeichneten Richtung. Im Fall des Horizontsystems ist dies etwa die Nord-Süd-Richtung, wobei 0 $^\circ$ Süden entspricht und die Zählung über Westen, Norden und Osten fortgesetzt wird.  
 
 \subsection{Der Theodolit}
@@ -50,10 +50,10 @@ Dazu wird zunächst der Theodolit mittels des Kugelgelenks und einer Libelle (kr
 \end{figure}
 
 \subsection{Messungen mit dem Theodoliten}
-Azimut und Deklination eines Objekts können bestimmt werden, indem das entsprechende Objekt anvisiert wird. Durch Umlegen eines Schalters kann man zwischen Deklination und Azimut wechseln. Der entsprechende Wert kann dann durch das Mikroskoprändel angelesen werden. Dazu muss die Mikrometertrommel derart eingestellt werden, dass die Lücken in den beiden sichtbaren Balken exakt nebeneinander liegen. 
+Azimut und Deklination eines Objekts können bestimmt werden, indem das entsprechende Objekt anvisiert wird. Durch Umlegen eines Schalters kann man zwischen Höhe und Azimut wechseln. Der entsprechende Wert kann dann durch das Mikroskoprändel angelesen werden. Dazu muss die Mikrometertrommel derart eingestellt werden, dass die Lücken in den beiden sichtbaren Balken exakt nebeneinander liegen. 
 
 \subsection{Messung des Turmazimuts}
-Mit einem derart justierten Theodoliten können nun Azimut und Deklination eines Objekts am Himmel bestimmt werden, indem man das entsprechende Objekt anvisiert und auf der Skala nun den jeweiligen Winkel, der in gon angezeigt wird, abliest. Dabei kann die Deklination als absoluter Wert im Horizontsystem abgelesen werden, wohingegen der Azimut nur relativ zu einem frei einstellbaren Nullpunkt bestimmbar ist. \\
+Mit einem derart justierten Theodoliten können nun Azimut und Höhe eines Objekts am Himmel bestimmt werden, indem man das entsprechende Objekt anvisiert und auf der Skala nun den jeweiligen Winkel, der in gon angezeigt wird, abliest. Dabei kann die Höhe als absoluter Wert im Horizontsystem abgelesen werden, wohingegen der Azimut nur relativ zu einem frei einstellbaren Nullpunkt bestimmbar ist. \\
 Um nun den Azimut des angesprochenen Objekts zu bestimmen, wird nun der relative Azimut des Objekts sowie der Azimut eines anderen Objekts abgelesen, der beispielsweise mittels Literatur- und Tabellenwerten als absoluter Wert bestimmt werden kann. Dieses zweite Objekt ist in diesem Fall die Sonne. \\
 Um den Turmazimut zu bestimmen, wird das Objekt mittels des Fadenkreuzes derart anvisiert, dass sich die Turmspitze möglichst exakt zentral im Fadenkreuz befindet. \\
 
@@ -66,5 +66,5 @@ U_{zen} = U_{end} - (t_{end} - \frac {t_{zw}}{2}),
 wobei $U_{zen}$ die Uhrzeit des Zentrumdurchgangs, $U_{end}$ die Uhrzeit bei Beendigung der Messung, $t_{end}$ die von der Stoppuhr am Ende der Messung angezeigte Zeit sowie $t_{zw}$ die gemessene Zwischenzeit auf der Stoppuhr. 
 
 \subsection{Berechnung des absoluten Sonnenazimuts}
-Mittels der in Listing \ref{script} (Anhang) dargestellen Berechnung kann aus Tabellenwerten für die Sternzeit um 0 Uhr des Messtages in Greenwich, den aktuellen Offset zwischen universal time (UT) und Ephemeridenzeit (TT) sowie den Werten für die Sonnendeklination und den Sonnenazimut im Äquatorialsystem zu Beginn und Ende des Messtages der absolute Azimut der Sonne zu jedem Messzeitpunkt eines Wertes für den Sonnenazimut bestimmt werden. Daraus ergibt sich durch Mittelung der Offset zwischen dem eingestellten Nullpunkt des Azimuts und der Nord-Süd-Verbindung. 
+Mittels der in Listing \ref{script} (Anhang) dargestellen Berechnung kann aus Tabellenwerten für die Sternzeit um 0 Uhr des Messtages in Greenwich, den aktuellen Offset zwischen universal time (UT) und Ephemeridenzeit (TT) sowie den Werten für die Sonnendeklination und die Rektaszension im Äquatorialsystem zu Beginn und Ende des Messtages der absolute Azimut der Sonne zu jedem Messzeitpunkt eines Wertes für den Sonnenazimut bestimmt werden. Daraus ergibt sich durch Mittelung der Offset zwischen dem eingestellten Nullpunkt des Azimuts und der Nord-Süd-Verbindung. 
 Durch Addition des Unterschiedes zwischen den relativen Azimutwerten für Turm und Sonne kann so der absolute Azimut des Turms bestimmt werden. 

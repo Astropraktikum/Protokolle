@@ -1,0 +1,9 @@
+set terminal png
+set output "l über vRot.png"
+set xlabel "l in °"
+set ylabel "v_Rot in km/s"
+set grid
+unset key
+set xrange [-5:95]
+set yrange [-5:250]
+plot "kompliziert" using 1:7

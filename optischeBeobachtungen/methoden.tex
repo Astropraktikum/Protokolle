@@ -1,14 +1,227 @@
 \section{Methoden}
+\subsection{Teleskope}
+Teleskope sind Linsen- oder Spiegelanordnungen, die dazu dienen, entfernte Objekte vergr"o"sert dazustellen. F"ur die Bildgr"o"se B eines Objekts in der Brennebene, das den Winkeldurchmesser $\phi$ hat, gilt mit der Kleinwinkeln"aherung die Formel \footnote{\cite{astr}}:
+\begin{equation}
+B = f_{\mathrm{Teleskop}} \cdot \phi.
+\end{equation}
+F"ur das Beispiel des Jupiters ergibt sich: 
+F"ur den Jupiter mit einem Winkeldurchmesser von $40"$ und der Brennweite $f_{Teleskop}=3.35m$ des 50cm Teleskops ergibt sich eine Bildgröße von
+\begin{align*}
+B_{Jupiter}&=3.36m \cdot 40"\\
+&= 6.5 \cdot 10^{-4} m
+\end{align*}.
+
+Das Seeing bezeichnet eine Bildunsch"arfe, die durch Turbulenzen in der Atmosph"are hervorgerufen wird. 
+Das mittlere Seeing in Bamberg beträgt\footnote{\cite{astr}} $\sim3 "$.
+Damit ist die Ausdehnung auf der Brennebene bedingt durch das Seeing
+\begin{align*}
+B_{Seeing}&=3.36m \cdot 3"\\
+&= 48.9 \mu m
+\end{align*}
+
+
+Visuelle Doppelsterne sind Sterne, die am Himmel nahe beieinander stehen, aber zu zwei Sternen aufgel"ost werden k"onnen. Diese sind nicht notwendigerweise gravitativ aneinander gebunden. 
+Die Aufl"osung von Teleskopen ist beugungsbegrenzt. Dies soll im Folgenden am Beispiel eines visuellen Doppelsterns dargestellt werden:
+Damit die beiden Sterne eines visuellen Doppelsterns noch unterschieden werden können, muss das \textbf{Rayleigh-Kriterium} gelten:
+\begin{equation}
+\beta \approx 1.22\frac{\lambda}{d}
+\end{equation}
+Hier ist $\beta$ der von der Erde aus gesehene Winkel zwischen den beiden Sternen, $\lambda$ die Wellenlänge des Lichts und $d$ der Durchmesser des Teleskops. Wenn zwei Sterne unter einem kleineren Winkel erscheinen, können sie nicht mehr auseinander gehalten werden.
+Es gibt auch noch das empirisch gefundene \textbf{Dawes-Kriterium}:
+\begin{equation}
+\beta \approx \frac{12''}{d}
+\end{equation}
+wobei $d$ der Durchmesser des Teleskops in cm ist.
+\\
+Das Sichtfeld h"angt auch vom gew"ahlten Okular ab berechnet sich aus:
+\begin{equation}
+\alpha = \frac{f_{Okular}}{f_{Teleskop}}\cdot \alpha_{Schein}
+\end{equation}
+\begin{enumerate}
+\item
+50 cm - Teleskop
+$\alpha_{min} = 0.16^{\circ}$
+$\alpha_{max} = 0.34^{\circ}$
+\item
+40 cm - Teleskop
+$\alpha_{min} = 0.14^{\circ}$
+$\alpha_{max} = 0.29^{\circ}$
+\item
+APO - Refraktor
+$\alpha_{min} = 0.68^{\circ}$
+$\alpha_{max} = 1.43^{\circ}$
+\end{enumerate}
+
+Die Helligkeit von Objekten im Himmel wird in Magnituden angegeben. Die Grenzmagnitude f"ur mittels eines Teleskops sichtbare Objekte h"angt von der Teleskop"offnung ab: Je gr"o"ser die "Offnung, desto dunklere Objekte k"onnen beobachtet werden. Es gilt: 
+\begin{equation}
+m_{\mathrm{Grenze}}=6.5 + 5\cdot \log D. 
+\end{equation}\
+Herleitung: 
+Scheinbare Helligkeitsformel gewichtet mit der Öffnung (der Lichtsammelfläche)
+\begin{align*}
+m_2-m_1&=-2.5 \cdot\log \frac{\frac{F_2}{D_2^2}}{\frac{F_1}{D_1^2}}\\
+\rightarrow m_2&=m1+2.5\cdot\log\frac{D_2^2}{D_1^2}\\
+m_2&=m_1+5\cdot \log \frac{D_2}{D_1}\\
+m_2&=m_1-5\cdot\log D_1 +5\cdot\log D_2
+\end{align*}
+Einsetzen von $m_{Grenze,Auge}=6.0$ Magnituden statt $m_1$, Durchmesser Auge $D_{Auge} = 0.8cm$ statt $D_1$, $m_{Grenze}$ statt $m_2$ und Durchmesser $D$ statt $D_2$:
+\begin{align*}
+m_{Grenze}&=m_{Grenze, Auge}-5\cdot\log D_{Auge} +5\cdot\log D\\
+m_{Grenze}&=6.0-(-0.5) +5\cdot\log D\\
+m_{Grenze}&=6.5 + 5\cdot \log D
+\end{align*}
+Diese Formel kann nun verwendet werden, um die Grenzmagnituden f"ur die Bamberger Teleskope zu berechnen. 
+
+Die Grenzmagnitude für das Bamberger Teleskop mit Durchmesser D = 40cm
+\begin{align*}
+m_{Grenze} (40cm)&= 6.5 + 5 \log \frac{40cm}{cm}\\
+&= 14.5
+\end{align*}
+
+Die Grenzmagnitude für das Bamberger Teleskop mit Durchmesser D = 50cm
+\begin{align*}
+m_{Grenze} (50cm)&= 6.5 + 5 \log \frac{50cm}{cm}\\
+&= 15.0
+\end{align*}
+
+
+Es gilt für die scheinbare Helligkeit von Doppelsternen: \\
+Bei konstantem Abstand vom Beobachter ergibt sich: 
+\begin{equation}
+m_2 - m_1 = 2.5\cdot \log(\frac{L_1}{L_2}). 
+\end{equation}, 
+wobei $m_1, m_2$ die scheinbaren Helligkeiten und $L_1, L_2$  die Leuchtkräfte der beiden Sterne im gleichem Abstand zum Beobachter sind.
+
+Durch Umformung ergibt sich: 
+\begin{equation}
+\frac{L_1}{L_2} = 10^{\frac{(m_2 - m_1)}{2.5}}. 
+\end{equation}
+
+Für ein Doppelstern mit den scheinbaren Helligkeiten $m_1$ und $m_2$ ergibt sich also: 
+Die Gesamtleuchtkraft ergibt sich durch Addition der einzelnen Leuchtkräfte und die Gesamtmagnitude nach Umrechnung der Gesamthelligkeit. 
+
+\begin{equation}
+L_{ges} = L_1 + L_2 = L_1 \cdot (1 + \frac{L_2}{L_1}) = L_1 \cdot (1 + 10^{\frac{(m_1 - m_2)}{2.5}}). 
+\end{equation}
+
+Für die Gesamtmagnitude ergibt sich:
+\begin{equation}
+m_{ges} = m_1 - 2.5\cdot \log(\frac{L_{ges}}{L_1}) = m_1 - 2.5\cdot \log(1 + 10^{\frac{(m_1 - m_2)}{2.5}}).
+\end{equation}
+Als Beispiel wird hier f"ur $\gamma$ And und $\gamma$ Leo die scheinbare Helligkeit berechnet. 
+Bei $\gamma$ And haben die beiden Hauptsterne scheinbare Helligkeiten von 2.3 mag und 4.8 mag. Mittels obiger Formel ergibt sich eine Gesamtmagnitude von 
+\begin{equation}
+m_{ges} = 2.3 - 2.5\cdot \log(1 + 10^{\frac{(2.3 - 4.8)}{2.5}}) = 2.20 \, \mathrm{mag}.
+\end{equation}
+Im Fall von $\gamma$ Leo besitzen die beiden Hauptsterne eine scheinbare Helligkeit von 2.3 und 3.5 mag. Mittels der gleichen Formel ergibt sich eine Gesamthelligkeit von 2.20 mag. \\
+
+Um ein Objekt "uber l"angere Zeit beobachten zu k"onnen, muss die Drehung der Erde durch Nachf"uhrung, d.h. durch Drehung des Teleskops durch einen Motor, ausgeglichen werden.
+\\
+Die Erde dreht sich in 23 Stunden, 56 Minuten und 4.1 Sekunden einmal um ihre eigene Achse bzw. die Stundenwinkelachse.
+Die Winkelgeschwindigkeit der Erde und damit die ben"otigte Nachf"uhrgeschwindigkeit ergibt sich dann zu:
+\begin{equation}
+\omega_{Erde} = \frac{2\pi}{T} = \frac{2\pi}{86164.1 \mathrm{s}} \approx 7.30 \cdot 10^{-5} \frac{1}{\mathrm{s}}
+\end{equation}
+bzw. $4.18 \cdot 10^{-3\   \circ} \frac{1}{\mathrm{s}}$.
+Dies bezieht nat"urlich nicht die Eigenbewegung des Objekts mit ein. Als Beispiel soll hier berechnet werden, wie lange der Mond bei ausgestellter Nachf"uhrung brauchen w"urde, um das Gesichtsfeld des Teleskops zu durchwandern.
+\\
+Der Mond dreht sich in 27.56 Tagen (anomalistische Periode) einmal um die Erde. Seine Winkelgeschwindigkeit $\omega_{Mond}$ aus Sicht der Erde ergibt sich damit zu $2.64\cdot 10^{-6} \frac{1}{\mathrm{s}}\ \textrm{bzw.}\ 1.51 \cdot 10^{-4\   \circ} \frac{1}{\mathrm{s}}$.
+Die Winkelgeschwindigkeit, mit der der Mond durch das Sichtfeld des Teleskops (bei ausgeschalteter Nachführung) wandert, ergibt sich damit zu $\omega = \omega_{Erde}-\omega_{Mond}$, also zu $7.04\cdot 10^{-5} \frac{1}{\mathrm{s}}$ bzw. $4.03 \cdot 10^{-3\   \circ} \frac{1}{\mathrm{s}}$. 
+Der Winkeldurchmesser des Mondes ergibt sich über die Beziehung
+\begin{equation}
+tan\  \alpha_{Mond} = \frac{D_{Mond}}{d_{Erde-Mond}}
+\end{equation}
+wobei $D_{Mond}$ der Durchmesser des Mondes und $d_{Erde-Mond}$ die mittlere Entfernung von Erde und Mond ist, von der der Radius der Erde abgezogen wurde.
+Mit Kleinwinkelnäherung gilt dann:
+\begin{equation}
+\alpha_{Mond} = \frac{D_{Mond}}{d_{Erde-Mond}} = \frac{3476 \mathrm{km}}{387129 \mathrm{km}} \approx 8.98 \cdot 10^{-3}\ \mathrm{bzw.}\ 0.51^{\circ} = 30' 22''
+\end{equation}
+\\
+Die Zeit, die der Mond braucht, um das Sichtfeld des Teleskops zu durchwandern, hängt vom verwendeten Teleskop und Okular ab.
+Als allgemeine Formel gilt:
+\begin{equation}
+t = \frac{\alpha_{Teleskop}+\alpha_{Mond}}{\omega}
+\end{equation}
+$\alpha_{Teleskop}$ ergibt sich aus der Formel
+\begin{equation}
+\alpha_{Teleskop} = \frac{\alpha_{Schein}}{V}
+\end{equation}
+wobei $\alpha_{Schein}$ das scheinbare Sichtfeld des Okulars und V die erreichbare Vergrößerung des Teleskops ist. V errechnet sich aus
+\begin{equation}
+V = \frac{f_{Teleskop}}{f_{Okular}}
+\end{equation}
+wobei f die Brennweite des Teleskops bzw. des Okulars ist.
+\\
+Also gilt:
+\begin{equation}
+t = \frac{\frac{f_{Okular}}{f_{Teleskop}}\cdot \alpha_{Schein} + \alpha_{Mond}}{\omega}
+\end{equation}
+
+Als Beispiel soll nun die Zeit für das 50cm - Teleskop ($f_{Teleskop} = 3.35\mathrm{m}$) mit dem Universal-Zoomokular einmal bei minimalem ($\alpha_{Schein}=48^{\circ}, f_{Okular} = 24 \mathrm{mm}$) und maximalem ($\alpha_{Schein}=68^{\circ}, f_{Okular} = 8 \mathrm{mm}$) Zoom berechnet werden.
+\begin{equation}
+t_{minZoom} = \frac{\frac{24 \cdot 10^{-3} \mathrm{m}}{3.35 \mathrm{m}}\cdot \frac{4}{15}\pi + 8.98 \cdot 10^{-3}}{7.04\cdot 10^{-5} \frac{1}{\mathrm{s}}} \approx 213 \mathrm{s}
+\end{equation}
+\begin{equation}
+t_{maxZoom} = \frac{\frac{8 \cdot 10^{-3} \mathrm{m}}{3.35 \mathrm{m}}\cdot \frac{17}{45}\pi + 8.98 \cdot 10^{-3}}{7.04\cdot 10^{-5} \frac{1}{\mathrm{s}}} \approx 168 \mathrm{s}
+\end{equation}
+
+Anhand von Deklination und Sternzeit lassen sich einfache Kriterien bzw. Faustregeln finden, ob ein Objekt beobachtbar ist oder nicht. 
+Fallunterscheidung \footnote{\cite{kmann}}\\
+Im Folgenden ist $\varphi$ die geographische Breite des Beobachtungsorts.
+\begin{itemize}
+\item Objekte mit Deklination  $> 90^\circ - \varphi$ liegen in der immer beobachtbaren Hemisphäre.
+\item Objekte mit Deklination $< - 90^\circ + \varphi$ liegen unterhalb des Horizonts.
+\item Objekte m"ussen mindestens $20^\circ$ "uber dem Horizont stehen.
+\item Objekte mit Deklination von $-90^\circ + \varphi$ bis $+90^\circ - \varphi$:
+\begin{itemize}
+\item Der Stundenwinkel definiert sich durch $\tau=\theta - \alpha$, wobei $\alpha$ die Rektaszension (Winkelabstand vom Fr"uhlingspunkt) und $\theta$ die Sternzeit. Dabei ist der Stundenwinkel des Fr"uhlingspunkts 
+\item Man kann Objekte $\sim\pm 4 h$ um die Sternzeit zu der das Objekt am h"ochsten steht, beobachten, wobei hier ein Stern in der "Aquatorialebene als "Uberlegungsgegenstand dient. Da der Stundenwinkel bei Kulmination 0 h ist, ist ein Objekt also bei einem Stundenwinkel zwischen 20 h und 4 h beobachtbar. 
+%Falls dies zu einem Zeitpunkt in Beobachtungszeitraum der Fall ist, ist das Objekt innerhalb des Beobachtungszeitraums beobachtbar. 
+%\item Wenn sich das Objekt zwischen 19:30 und 00:00 in einem beobachtbaren Bereich befindet ist es in der ersten Nachth"alfte beobachtbar
+\end{itemize}
+\end{itemize}
+
+Hier werden die Regeln angewandt um Sichtbarkeit während der ersten Nachthälfte zu bestimmen
+\subsection{Nicht beobachtbare Objekte}
+\paragraph{Nie sichtbar,} da Deklination von $<-20^\circ$:
+\begin{itemize}
+\item IC 2602
+\item NGC 4945
+\item Peacock
+\item M4
+\end{itemize}
+\paragraph{Tags oder in 2. Nachthälfte sichtbar}
+\begin{itemize}
+\item M57
+\end{itemize}
+\subsection{Beobachtbare Objekte}
+\paragraph{Zu jeder Zeit sichtbar,} da Deklination von $>60^\circ$:
+\begin{itemize}
+\item M81
+\end{itemize}
+\paragraph{In der ersten Nachthälfte sichtbar}
+\begin{itemize}
+\item M1
+\item M3
+\item M31
+\item M33
+\item M34
+\item M45
+\item NGC 884
+\item $\gamma$ And
+\item $\gamma$ Leo
+\end{itemize}
+
 \subsection{Beobachtung mit den Teleskopen im Garten}
-Mit den Teleskopen im Garten sollten zwei \enquote{interessante} Objekte beobachtet werden. Dabei entschieden wir uns für den Jupiter sowie den Orionnebel und den Mond. Des weiteren sollte der Doppelstern $\eta$ Ori mittels Starhopping gefunden und beobachtet werden. Hierzu wurde ein Apochromat verwendet, der auf der süd-westlichen Teleskopsäule montiert wurde. 
+Mit den Teleskopen im Garten sollten zwei \enquote{interessante} Objekte beobachtet werden. Dabei entschieden wir uns für den Jupiter sowie den Orionnebel und den Mond. Des weiteren sollte der Doppelstern $\eta$ Ori mittels Starhopping gefunden und beobachtet werden. Hierzu wurde ein Apochromat verwendet, der auf der süd-westlichen Teleskopsäule montiert wurde.
 \subsection{Starhopping}
 Das Auffinden von Sternen am Nachthimmel wurde mittels des sogenannten \enquote{Starhopping} und Auffindkarten realisiert. Das allgemeine Vorgehen dabei ist, dass man sich zu Beginn einen hellen, eindeutig identifizierbaren Stern in der Nähe des zu beobachtenden Objekts sucht und davon ausgehend Objekte in der Umgebung dieses Sterns identifiziert und sich auf diese Art bis zu dem gewünschten Objekt \enquote{durcharbeitet}.  
 
 \subsection{Beobachtung mit dem 50 cm-Teleskop}
-Des weiteren sollte ein Nebel, eine Galaxie oder ein Sternhaufen beobachtet werden. Nachdem die \enquote{Sombrero-Galaxie} M 104, die wir eigentlich ausgesucht hatten, zum Beobachtungszeitpunkt leider eine zu kleine Deklination aufwies, entschieden wir uns für die \enquote{Whirlpool-Galaxie} M 51. \\
+Des weiteren sollte ein Nebel, eine Galaxie oder ein Sternhaufen beobachtet werden. Nachdem die \enquote{Sombrero-Galaxie} M 104, die wir eigentlich ausgesucht hatten, zum Beobachtungszeitpunkt leider eine zu kleine Deklination aufwies, da wir keinen Einfluss auf den Beobachtungszeitpunkt hatten entschieden wir uns für die \enquote{Whirlpool-Galaxie} M 51. \\
 Der Grundaufbau war eine CCD-Kamera, die an das 50 cm-Teleskop in der Ostkuppel angeschlossen war. 
-Zunächst wurde das Teleskop auf den Stern Merak im Sternbild Großer Wagen fokussiert. Dies geschah mittels einer Blende, die drei paarweise nicht parallele Spalten aufweist, sodass es zu Interferenz des einfallenden Lichts kommt. Der Fokus des Teleskops wurde nun mittels der Handsteuerung so eingestellt, dass die drei durch die Interferenz bedingten, am Bildschirm sichtbaren Geraden einen gemeinsamen Schnittpunkt aufweisen. \\
-Da sowohl Merak als auch der zu beobachtende Stern hinreichend weit von der Erde entfernt sind, ist die Einstellung des Fokus' für beide Objekte äquivalent. \\
+Zunächst wurde das Teleskop auf den Stern Merak im Sternbild Großer Wagen fokussiert. Dies geschah mittels einer Maske, die drei paarweise nicht parallele Spalten aufweist, sodass es zu Beugung des einfallenden Lichts kommt. Der Fokus des Teleskops wurde nun mittels der Handsteuerung so eingestellt, dass die drei durch die Interferenz bedingten, am Bildschirm sichtbaren Geraden einen gemeinsamen Schnittpunkt aufweisen. \\
+Da sowohl Merak als auch die zu beobachtende Galaxie hinreichend weit von der Erde entfernt sind, ist die Einstellung des Fokus' für beide Objekte äquivalent. \\
 Anschließend wurden zunächst fünf Bilder mit einer Belichtungszeit von 120 s ohne Farbfilter in der Messapparatur aufgenommen. Danach wurden nochmals je drei Bilder mit rot-, grün bzw. blau-Filter aufgenommen, wobei eine Belichtungszeit von 120 s verwendet wurde. Allerdings wurde das sogenannte \enquote{binning} angewendet, wodurch je vier Pixel zu einem zusammengefasst werden, also deren Intensitäten addiert werden. Da aufgrund der Filter die transmittierte Intensität um etwa den Faktor 3 geringer ist als bei der Aufnahme ohne Filter, gleicht das binning diesen Effekt in etwa aus, da es eine Erhöhung der Intensität um den Faktor 4 zur Folge hat. 
 
 \subsection{Bildbearbeitung mittels dark frames und flat fields}

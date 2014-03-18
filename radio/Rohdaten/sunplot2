@@ -1,0 +1,6 @@
+set terminal png
+set output "sun4.png"
+unset key
+set xlabel "Zeit in Monaten mit t=0 im Februar 2014"
+set ylabel "Anzahl der Sonnenflecken (SWO)"
+plot "sun3.txt" using 1:2

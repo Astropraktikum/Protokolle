@@ -1,0 +1,6 @@
+set terminal png
+set output "sun4.png"
+unset key
+set xlabel "Anzahl der Vergangenen Monate seit Februar 2014"
+set ylabel "Zeit in Monaten mit t=0 im Februar 2014"
+plot "sun3.txt" using 1:2

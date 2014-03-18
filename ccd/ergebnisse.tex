@@ -1,6 +1,15 @@
 \section{Ergebnisse}
 \subsection{Messung des Dunkelstroms in Abh"angigkeit von der Temperatur}
-Zunächst wurden bei einer Belichtungszeit von 30 Sekunden dark frames bei verschiedenen Temperaturen des Chips aufgenommen, um die ideale Betriebstemperatur des CCD zu ermitteln. Hierbei ergaben sich die in Tabelle \ref{tbl:adu_temp} dargestellten Werte, welche in Abb. \ref{fig:adu_temp} graphisch dargestellt sind. 
+Zunächst wurden bei einer Belichtungszeit von 30 Sekunden dark frames bei verschiedenen Temperaturen des Chips aufgenommen, um die ideale Betriebstemperatur des CCD zu ermitteln. Eine beispielhafte Aufnahme bei -3 $^\circ$ \, C ist in Abb. \ref{fig:dark} dargestellt. 
+
+\begin{figure}[h!]
+\centering
+        \includegraphics[width=.5\textwidth]{dark.png}
+\caption{ Aufnahme eines dark frames bei -3  $^\circ$ C}
+\label{fig:dark}
+\end{figure}
+
+Hierbei ergaben sich die in Tabelle \ref{tbl:adu_temp} dargestellten Werte, welche in Abb. \ref{fig:adu_temp} graphisch dargestellt sind. 
 \begin{figure}[h!]
 \centering
         \includegraphics[width=.9\textwidth]{plot_adu_temp2.png}
@@ -10,12 +19,12 @@ Zunächst wurden bei einer Belichtungszeit von 30 Sekunden dark frames bei versc
 Hier wurde der Verlauf mit einer Exponentialfunktion $f(T) = a \cdot \exp(T \cdot c) + b$ gefittet, welche theoretisch zu erwarten ist, da die Energie der Elektronen im Halbleiter prinzipiell Boltzmann-verteilt ist. \\
 Es ergibt sich also eine ideale Temperatur von etwa -15 $^\circ$ C im betrachteten Intervall von -15 bis + 20 $^\circ$ C. Eine tiefere Temperatur ist aufgrund der begrenzten Kühlleistung des CCD-Chips nicht erreichbar. Für die Fitparameter ergibt sich: 
 $a = 40.0\  \mathrm{adu}, c = 0.119 \frac{1}{\mathrm{K}}, b = 124.2 \ \mathrm{adu}$.\
-Augenscheinlich approximiert der Fit die Messdaten sehr gut.
+Augenscheinlich approximiert der Fit die Messdaten sehr gut, die variance of residuals ergibt sich nach gnuplot zu 12.06. 
 \subsection{Bestimmung des Bias}
-Die Aufnahme eines bias frames bei einer Belichtungszeit von 0.12 s wird in Abb. \ref{fig:bias} dargestellt. 
+Die Aufnahme eines bias frames bei einer Belichtungszeit von 0.12 s ist in Abb. \ref{fig:bias} zu sehen, wobei die Helligkeit zur besseren Darstellung erh"oht wurde. 
 \begin{figure}[h!]
 \centering
-        \includegraphics[width=.9\textwidth]{beiers_01.png}
+        \includegraphics[width=.5\textwidth]{beiers_01.png}
 \caption{ Aufnahme eines bias frame }
 \label{fig:bias}
 \end{figure}
@@ -24,25 +33,34 @@ Es wurden insgesamt 11 bias frames aufgenommen, deren mittlerer ADU-Wert sich zu
 \subsection{Bestimmung des Gain-Faktors}
 Hierzu wurden zu verschiedenen Belichtungszeiten je zwei flat field-Aufnahmen eines homogen ausgeleuchteten Blatts Papier angefertigt.
 Damit auch bei maximaler Belichtungszeit kein überbelichtetes Bild aufgenommen wurde, musste insgesamt ein Filter der Stärke 2048, der also nur $\frac{1}{2048}$ des Lichts transmittiert, verwendet werden. 
-Zur Bestimmung des Gain-Faktors werden zu jeder Belichtungsdauer je zwei flat fields aufgenommen und ausgewertet. Dabei ergeben sich mit der Formel \eqref{form:gain} die in Tabelle \ref{tbl:gain} dargestellten Werte. Als gemittelter Wert ergibt sich 
+Zur Bestimmung des Gain-Faktors werden zu jeder Belichtungsdauer je zwei flat fields aufgenommen und ausgewertet. Dabei ergeben sich mit der Formel \eqref{form:gain} die in Tabelle \ref{tbl:gain} dargestellten Werte. \\
+F"ur den Fehler wurde der Fehler von $N_{ADU}(A)$, $N_{ADU}(C)$, $N_{ADU}(\overline{B_1})$, $N_{ADU}(\overline{B_2})$ sowie eine auf \eqref{form:gain} aufbauende Fehlerfortpflanzung verwendet:
+\footnotesize
+\begin{align}
+\delta g = \nonumber\\&= \sqrt{(\frac{1}{\sigma_{ADU}^2(A-C) - \sigma_{ADU}^2(B_1-B_2)})^2 \cdot (\delta N_{ADU}(A)^2 + \delta N_{ADU}(C)^2+ \delta N_{ADU}(\overline{B_1})^2 + \delta N_{ADU}(\overline{B_2})^2)}. 
+\end{align}
+\normalsize
+Hierbei wurden nur f"ur die im Z"ahler vorkommenden Werte Fehler verwendet. F"ur die Standardabweichungen im Nenner ist es schwierig, Fehler zu bestimmen, sodass diese nicht in der Fehlerfortpflanzung verwendet werden. 
+
+Als gemittelter Wert ergibt sich 
 \begin{equation}
-\bar{g} = 1.94 \pm 0.04 \ \frac{\mathrm{adu}}{\mathrm{e}}. 
+\bar{g} = 1.94 \pm 0.04 \ \frac{\mathrm{ADU}}{\mathrm{e}}. 
 \end{equation}
 Die Werte für den Gain-Faktor sind zwar alle im gleichen Bereich, es ist aber eine leichte Tendenz zu kleineren Gain-Faktoren bei größeren Belichtungszeiten erkennbar. Der Grund hierfür dürfte in Fehlern, die sich in der statistischen Betrachtung zur Herleitung der Formel für den Gain-Faktor ergeben, liegen. 
 \subsection{Untersuchung der Linearit"at des CCDs}
-In Tabelle \ref{tbl:adu_int} sind die gemessenen ADU-Werte aufgetragen über dem transmittierten Licht als Anteil der Lichtintensität, wobei die Helligkeit "uber einer rechteckigen Fl"ache, die die gesamte Diode einschlie"st, aufintegriert wurde. \\
-Plottet man die ermittelten Werte, so ergibt sich der in \ref{plot:adu_int} dargestellte Verlauf. Werden die Datenpunkte mit der Funktion 
+In Tabelle \ref{tbl:adu_int} sind die gemessenen ADU-Werte aufgetragen über dem transmittierten Licht als Anteil der Lichtintensität, wobei die Helligkeit "uber einer rechteckigen Fl"ache, die die gesamte Diode einschlie"st, aufintegriert wurde. Da, laut dem Betreuer, die Werte f"ur die aufintegrierte Intensit"at Poisson-verteilt ist, ergibt sich der Fehler als Quadratwurzel der gemessenen und aufintegrierten ADU-Werte. \\
+Plottet man die ermittelten Werte, so ergibt sich der in Abb. \ref{plot:adu_int} dargestellte Verlauf. Werden die Datenpunkte mit der Funktion 
 \begin{equation}
 f(x) = a \cdot x + b
 \end{equation}
-gefittet, so ergeben sich die Werte $a = (119 \pm 5.0) \cdot 10^6 \ adu$ und $b = (2.8 \pm 1.4) \cdot 10^6 \ adu$.
+gefittet, so ergeben sich die Werte $a = (119 \pm 5.0) \cdot 10^6 \ ADU$ und $b = (2.8 \pm 1.4) \cdot 10^6 \ ADU$.
 \begin{figure}[h!]
 \centering
         \includegraphics[width=.9\textwidth]{adu_int_.png}
 \caption{ Auftragung des gemessenen ADU-Wertes über der einfallenden Lichtintensität }
 \label{plot:adu_int}
 \end{figure}
-Der Fit approximiert die Punkte nahe der Null sehr gut, die Punkte mit h"oherer Intensit"at jedoch eher schlecht. Grund hierf"ur ist insbesondere der Wert bei Intensit"at 1, d.h. ohne Filter. M"oglicherweise fand hier trotz entsprechender Blendeneinstellung von 5.6f eine "Uberbelichtung statt.\\
+Der Fit approximiert die Punkte nahe der Null sehr gut, die Punkte mit h"oherer Intensit"at jedoch eher schlecht. Grund hierf"ur ist insbesondere der Wert bei Intensit"at 1, d.h. ohne Filter. M"oglicherweise fand hier trotz entsprechender Blendeneinstellung von 5.6f eine "Uberbelichtung statt. Die variance of residuals ergibt sich zu 18.9. \\
 \subsection{Blooming und Smear}
 \begin{figure}[h!]
 \centering

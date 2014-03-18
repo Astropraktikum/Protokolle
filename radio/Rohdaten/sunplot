@@ -1,0 +1,6 @@
+set terminal png
+set output "sun3.png"
+unset key
+set xlabel "Zeit in Monaten mit t=0 im Februar 2014"
+set ylabel "Radiointensität der Sonne bei 10.7 cm in sfu"
+plot "sun3.txt" using 1:7

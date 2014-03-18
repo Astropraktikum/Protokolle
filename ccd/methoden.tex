@@ -1,38 +1,43 @@
 \section{Methoden}
 \subsection{Halbleiter}
-Halbleiter sind besondere Elemente mit vier Valenzelektronen, das bekannteste Beispiel hierfür ist der Halbleiter Silizium. Sie können durch Einbringen von Fremdatomen mit drei (p) oder fünf Valenzelektronen (n)  \enquote{dotiert} werden. Die hat zur Folge, dass der dotierte Halbleiter zwar elektrisch neutral ist, sich allerdings Unregelmäßigkeiten im Metallgitter ausbilden, sodass ein
-Wird ein Atom mit fünf Valenzelektronen eingebracht, so exisiert im regelmäßigen Siliziumgitter kein freier Platz für das Elektron, sodass es \\
-HIER FEHLT NOCH ZEUG
+Im Folgenden nach \cite{astr}
+\subsubsection{B"andermodell}
+In Kristallgittern "uberlagern sich die Energieniveaus der benachbarten Atome und es entstehen Energieb"ander anstatt der diskreten Niveaus. Das h"ochste Band, in dem sich Elektronen frei bewegen k"onnen, hei"st Leitungsband, das Band darunter, in dem sich die Valenzelektronen der Atome befinden, hei"st Valenzband. In Leitern "uberschneiden sich Valenzband und Leitungsband, sodass es stets frei bewegliche Elektronen gibt, in Halbleitern und Isolatoren gibt es eine L"ucke zwischen den beiden B"andern. Die Trennung zwischen Halbleitern und Isolatoren wird anhand der Gr"o"se der Bandl"ucke definiert. 
+\subsubsection{Dotierung}
+In das Kristallgitter von Halbleitern k"onnen Fremdatome eingearbeitet werden, die dann die Bandl"ucke und damit die Leitf"ahigkeit "andern. So kann man z.B. in Silizium Phosphor- und Boratome einbringen. Silizium hat 4 Valenzelektronen, Phosphor besitzt 5. Durch die Einbringung (\enquote{Dotierung}) kommen also "uberz"ahlige Elektronen hinzu, die nun leicht ins Leitungsband wechseln k"onnen (genannt Elektronenleitung oder n-Leitung). Bor hat nur 3 Valenzelektronen, also entstehen durch die Einbringung Elektronenfehlstellen, die Elektronen aus dem Valenzband anlagern (L"ocherleitung, p-Leitung).\\
+Bringt man nun eine p-dotierte und eine n-dotierte Schicht zusammen, diffundieren die Elektronen aus dem Leitungsband in die Elektronenfehlstellen des Valenzbands. Das p-dotierte Gebiet wird dadurch negativ aufgeladen, das n-dotierte positiv, es entsteht ein elektrisches Feld, das vom n- ins p-Gebiet gerichtet wird. Legt man nun zwischen den beiden Schichten eine Spannung an, so verschieben sich die B"ander.
+Wenn an das p-Gebiet der Pluspol und an das n-Gebiet der Minuspol angeschlossen, verschieben sich die B"ander zueinander hin und das Halbleiterelement leitet Strom (\enquote{Durchlassrichtung}). Wird die Spannung andersrum angelegt, verschieben sich die B"ander voneinander weg und es kann kein Strom flie"sen (\enquote{Sperrrichtung}).\\
+Trifft ein Photon auf ein Halbleiterelement, absorbieren die Elektronen die Energie des Photons und k"onnen damit die Bandl"ucke "uberwinden, wodurch kurzzeitig ein Strom flie"st. Dies ist jedoch nur m"oglich, wenn die Energie des Photons gr"o"ser als die Bandl"ucke ist. Durch thermische Effekte entstehen jedoch Gitterschwingungen, wodurch das Photon mehr Energie als die Bandl"ucke aufwenden muss.\\
+In der folgenden Rechnung soll "uberpr"uft werden, wie viele Elektronen durch ein Photon aus dem sichtbaren Bereich des Spektrums gel"ost werden k"onnen.
+
+Für die Energie eines Photons gilt: 
+\begin{equation}
+E = h \nu = h \frac{c}{\lambda}. 
+\end{equation}
+Dementsprechend folgt für eine Wellenlänge von $450\, \textrm{nm}$: 
+\begin{equation}
+E = 6.626 \cdot 10^{-34}\, \textrm{Js} \frac{3.0 \cdot 10^8 \frac{\textrm{m}}{\textrm{s}}}{450\, \textrm{nm}} = 2.8\, \textrm{eV}. 
+\end{equation}
+Die Energie eines einfallenden Photons reicht also für zwei Elektron/Lochpaare aus. Somit können zwei Elektronen ausgelöst werden. \\
+Für rotes Licht (etwa Wellenlänge $\lambda = 700\, \textrm{nm} $) ergibt eine analoge Rechnung eine Energie von $1.7\, \textrm{eV} $. Unter der Annahme, dass nur die Bandlücke von $1.12\, \textrm{eV} $ aufgebracht werden muss, ist das CCD rot-empfindlich. Da aufgrund von Gitterschwingungen zus"atzliche Energie aufgebracht werden muss, welche im Mittel etwa 2.56 eV betr"agt, ist der CCD-Chip nur schwach rot-empfindlich, da nur wenige der Photonen tats"achlich Elektronen ausl"osen.  
 
 \subsection{Aufbau und Funktion eines CCD-Chips}
-Ein CCD-Chip setzt sich aus einer rechtecksgitterförmigen Anordnung von Halbleiterelementen, sogenannten Pixeln, zusammen. An diesen liegt eine Spannung in Sperrrichtung an, sodass zunächst kein Strom fließen kann. Wird der Halbleiter allerdings mit Photonen hinreichend großer Energie bestrahlt, so kann das Photon ein oder mehrere Paare von Elektronen und Löchern aus dem Gitter lösen, die schließlich in einem Potenzialtopf gesammelt werden. \\
+Ein CCD-Chip setzt sich aus einer rechtecksgitterförmigen Anordnung von Halbleiterelementen, sogenannten Pixeln, zusammen. Wird der Halbleiter allerdings mit Photonen hinreichend großer Energie bestrahlt, so kann das Photon ein oder mehrere Paare von Elektronen und Löchern aus dem Gitter lösen, die schließlich in einem Potenzialtopf gesammelt werden. \\
 Die einzelnen Pixel sind spaltenweise gegeneinander isoliert, allerdings nicht zeilenweise. Durch Anlegen einer zeitlich gepulsten Spannung ($\Phi$-Puls) an die Spalten werden die in den Potenzialtöpfen während der Beleuchtung des Chips gesammelten Elektronen während dem Ausleseprozess Zeile für Zeile in Ausleserichtung verschoben. Am Rand des Gitters befindet sich in Ausleserichtung die Ausleseelektronik, die die Ladungsmenge pro Pixel misst und digitalisiert. Durch den Ausleseprozess sowie aufgrund von Fehlern in der Struktur des CCD-Chips entstehen verschiedene Bildfehler, die im Folgenden dargestellt werden. 
 
 \subsection{Bildfehler und -korrekturen}
-Die folgenden Informationen wurden entnommen aus \enquote{Richard Berry, James Burnell, The Handbook of Astronomical Image Processing, Willman-Bell 2006}
-CCD-Kameras zählen die auf den Chip auftreffenden Photonen und rechnen diese in ein Signal um. Dabei ist jedoch zunächst zu beachten, dass Photonen nicht gleichmäßig auf den Chip auftreffen, sondern zufällig verteilt. Dabei ergibt sich f"ur die Anzahl der detektierten Photonen pro Zeiteinheit eine Poisson-Verteilung. Bei wiederholten Messungen bekommt man also auch jeweils verschiedene Werte. Dies wäre bei herkömmlichen, z.B. tagsüber aufgenommenen Bildern egal, da dort enorm viele Photonen auftreffen und die kleinen Variationen keinen Unterschied machen. Die Zahl der auftreffenden Photonen bei astronomischen Aufnahmen ist aber so gering, dass die zufälligen Variationen großen Einfluss nehmen k"onnen.\
+Die folgenden Informationen wurden entnommen aus \cite{ry}. 
+CCD-Kameras zählen die auf den Chip auftreffenden Photonen und rechnen diese in ein Signal um. Dabei ist jedoch zunächst zu beachten, dass Photonen nicht gleichmäßig auf den Chip auftreffen, sondern zufällig verteilt. Dabei ergibt sich f"ur die Anzahl der detektierten Photonen pro Zeiteinheit eine Poisson-Verteilung. Bei wiederholten Messungen bekommt man also auch jeweils verschiedene Werte. Dies wäre bei herkömmlichen, z.B. tagsüber aufgenommenen Bildern egal, da dort enorm viele Photonen auftreffen und die kleinen Variationen keinen Unterschied machen. Die Zahl der auftreffenden Photonen bei astronomischen Aufnahmen ist aber so gering, dass die zufälligen Variationen großen Einfluss nehmen k"onnen.\\
 Bei mehreren Bildern wird für jeden Pixel einen Mittelwert und eine Standardabweichung (auch 'noise' genannt) für die Photonenzahl bestimmt. Anhand dessen wird ein Maß für die Qualität eines Bildes definiert, die \enquote{Signal-to-noise ratio} (SNR) $\frac{\overline{x}}{\sqrt{\overline{x}}} = \sqrt{\overline{x}}$.  Daraus lässt sich auch erkennen, dass eine größere Anzahl detektierter Photonen eine bessere Bildqualität liefert.\\
-Die reine statistische Varianz der ankommenden Photonen ist aber nicht die einzige Quelle für Fehler bzw. Abweichungen. So ist der von der CCD-Kamera ausgegebene Wert für jeden Pixel nicht einfach die Zahl der detektierten Photonen, sondern ein Wert in einer willk"urlich gew"ahlten Einheit (genannt 'analog-to-digital unit' oder ADU). Der Zusammenhang zwischen den gelösten Elektronen und dem Wert in ADU heißt 'Gain-Faktor' $g$. Es ist insbesondere nicht klar, ob ein 0 detektierte Photonen auch einem Wert von 0 ADU entspricht, so besitzen die meisten Kameras einen Offset (genannt 'bias'), der vom Messwert abgezogen werden muss. Dieser Offset kann bestimmt werden, indem ein 'bias frame', also ein Bild mit minimaler Belichtungszeit aufgenommen wird. Dieser 'bias frame' muss dann vom eigentlichen Bild abgezogen werden, um ein Ergebnis, das proportional zur Anzahl der detektierten Photonen ist, zu erhalten. Ein weiterer Effekt der Signalwandelelektronik ist der 'readout noise', eine konstante Unsicherheit, die ihren Ursprung in den Verstärkerschaltkreisen hat.
+Die reine statistische Varianz der ankommenden Photonen ist aber nicht die einzige Quelle für Fehler bzw. Abweichungen. So ist der von der CCD-Kamera ausgegebene Wert für jeden Pixel nicht einfach die Zahl der detektierten Photonen, sondern ein Wert in einer willk"urlich gew"ahlten Einheit (genannt 'analog-to-digital unit' oder ADU). Der Zusammenhang zwischen den gelösten Elektronen und dem Wert in ADU heißt 'Gain-Faktor' $g$. Insbesondere f"uhren 0 detektierte Photonen zu einem ADU gr"o"ser 0. Grund hierf"ur ist der bias, der dem Signal in der Ausleseelektronik hinzugef"ugt wird, um einen Auslesewert von unter 0 ADU zu verhindern, der zu aufgrund des analog-digital-Wandlers einem scheinbar extrem hohen Signal f"uhren w"urde. So besitzen die meisten Kameras einen Offset (genannt 'bias'), der vom Messwert abgezogen werden muss. Dieser Offset kann bestimmt werden, indem ein 'bias frame', also ein Bild mit minimaler Belichtungszeit aufgenommen wird. Dieser 'bias frame' muss dann vom eigentlichen Bild abgezogen werden, um ein Ergebnis, das proportional zur Anzahl der detektierten Photonen ist, zu erhalten. Ein weiterer Effekt der Signalwandelelektronik ist der 'readout noise', die Unsicherheit des bias.
 \\
-Der CCD-Chip selbst hat auch Fehlerquellen. Defekte im Kristallgitter der Halbleiterstruktur führen zu 'hot pixels' (zu kleine Bandlücke, sodass immer Elektronen herausgelöst werden), 'dead pixels' (zu große Bandlücke, sodass nie Elektronen herausgelöst werden), außerdem führen thermische Effekte (nicht ausreichende Kühlung) ebenfalls dazu, dass Elektronen gelöst werden, ohne dass ein Photon auf den Chip auftrifft. Die thermischen Effekte und 'hot pixels' können mittels einer 'dark frame'-Aufnahme, also einer Aufnahme mit identischer Belichtungszeit zur eigentlichen Aufnahme, aber ohne Lichteinfall (z.B. mit geschlossenem Shutter), korrigiert werden. Auf dem 'dark frame' sind also nur die Fehler des Chips zu sehen, die dann vom eigentlichen Bild abgezogen werden können. Da die Auslösung der Elektronen durch thermische Effekte aber auch ein Zufallsprozess ist, kommt durch die 'dark frame'-Aufnahme eine weitere Unsicherheit hinzu ('dark current noise').\
+Der CCD-Chip selbst hat auch Fehlerquellen. Defekte im Kristallgitter der Halbleiterstruktur führen zu 'hot pixels' (zu kleine Bandlücke, sodass immer Elektronen herausgelöst werden), 'dead pixels' (zu große Bandlücke, sodass nie Elektronen herausgelöst werden), außerdem führen thermische Effekte (nicht ausreichende Kühlung) ebenfalls dazu, dass Elektronen gelöst werden, ohne dass ein Photon auf den Chip auftrifft. Die thermischen Effekte und 'hot pixels' können mittels einer 'dark frame'-Aufnahme, also einer Aufnahme mit identischer Belichtungszeit zur eigentlichen Aufnahme, aber ohne Lichteinfall (z.B. mit geschlossenem Shutter), korrigiert werden. Auf dem 'dark frame' sind also nur die Fehler des Chips zu sehen. Zur Korrektur wird das dark frame vom flat subtrahiert, um hot pixels und den Fehler durch Dunkelstrom zu beheben. Da die Auslösung der Elektronen durch thermische Effekte aber auch ein Zufallsprozess ist, kommt durch die 'dark frame'-Aufnahme eine weitere Unsicherheit hinzu ('dark current noise').\
 'Dead pixels' können in der Nachbearbeitung behoben werden, indem der Wert des defekten Pixels als Mittelwert der beiden benachbarten Pixel berechnet wird.
 \\
-Der dritte wichtige Faktor, der das Bild verfälschen kann, ist der eigentliche optische Aufbau, (d.h. Teleskop, Okular, Filter, etc.) Reflexionen, Staub, Linsen-/Spiegelfehler usw., sowie die unterschiedliche Empfindlichkeit verschiedener Pixel auf Photoneneinfall (z. B. aufgrund leicht unterschiedlicher Bandl"ucken) erzeugen auf dem Bild sichtbare Artefakte. Um diese zu entfernen, wird ein 'flat field' aufgenommen, ein homogen ausgeleuchtetes Bild. Dieses Bild sollte möglichst hell sein (also eine große signal-to-noise ratio besitzen), um wenig zusätzliche Unsicherheiten in das fertige Bild einzubringen. Außerdem kann noch ein 'flat dark frame' aufgenommen werden, der dann vom flat field abgezogen wird. Die eigentliche Aufnahme (die schon mittels bias und dark frame verbessert wurde) wird schließlich mit dem flat field gewichtet (d.h. dadurch geteilt).
-\\
-Die vorhin schon angesprochenen statistischen Betrachtungen (signal, noise) haben eine wichtige praktische Bedeutung, die hier noch kurz angesprochen werden soll.
-\\
-Das gesamte detektierte Signal (in ADU) in der ursprünglichen Aufnahme $S_{raw}$ ist gegeben durch
-\begin{equation}
-S_{raw} = \frac{x}{g} + \frac{x_d}{g} + b
-\end{equation}
-wobei $x$ die Anzahl der detektierten Elektronen, $x_d$ der Dunkelstrom, also die Anzahl der durch CCD-Effekte herausgelösten Elektronen, $g$ der Gain-Faktor und $b$ der Bias ist.
-\\
-Die gesamte Unsicherheit $\sigma_{raw}$ (in ADU) der ursprünglichen Aufnahme berechnet sich durch 
-\begin{equation}
-\sigma_{raw} = \frac{\sqrt{\sigma^2 + \sigma_d^2 + \sigma_{ron}^2}}{g}
-\end{equation}
-wobei $\sigma$ die Standardabweichung der detektierten Elektronen, $\sigma_d$ der dark current noise und $\sigma_{ron}$ der readout noise ist.
-\\
+Der dritte wichtige Faktor, der das Bild verfälschen kann, ist der eigentliche optische Aufbau, (d.h. Teleskop, Okular, Filter, etc.) Reflexionen, Staub, Linsen-/Spiegelfehler usw., sowie die unterschiedliche Empfindlichkeit verschiedener Pixel auf Photoneneinfall (z. B. aufgrund leicht unterschiedlicher Bandl"ucken) erzeugen auf dem Bild sichtbare Artefakte. Um diese zu entfernen, wird ein 'flat field' aufgenommen, ein homogen ausgeleuchtetes Bild. Dieses Bild sollte möglichst hell sein (also eine große signal-to-noise ratio besitzen), um wenig zusätzliche Unsicherheiten in das fertige Bild einzubringen. Außerdem kann noch ein 'flat dark frame' aufgenommen werden. Dieser  'flat dark frame' wird dann analog zum dark frame bei der eigentlichen Aufnahme vom flat field subtrahiert. Diese eigentliche Aufnahme (die schon mittels bias und dark frame verbessert wurde) wird schließlich mit dem flat field gewichtet (d.h. dadurch geteilt).
+
+
+\begin{comment}
 Diese Formeln gelten entsprechend auch für den dark frame und das flat field.
 Die praktische Anwendung zeigt sich, wenn man mehrere Bilder aufnimmt (um ein Mittel zu erzeugen). Die resultierende Signalstärke und Abweichung ergibt sich dann zu:
 \begin{equation}
@@ -47,15 +52,14 @@ Noch zu bedenken ist, dass durch die flat field - Korrektur zusätzliche Unsiche
 \begin{equation}
 SNR_{result} = \frac{1}{\sqrt{\frac{1}{SNR_{image}^2} + \frac{1}{SNR_{flatfield}^2}}}
 \end{equation}
+\end{comment}
 Ein letzter, wichtiger Aspekt für astronomische Aufnahmen ist der Einfluss der Lichtverschmutzung, der durch die OSR (\enquote{object-to-sky ratio}) beschrieben wird. Dieser kann in städtischen Gebieten (also auch in Bamberg) sehr groß sein, ist aber für diesen Versuch irrelevant.\\
 \enquote{Blooming} und \enquote{Smear} sind zwei weitere Effekte, die bei Aufnahmen mit CCD-Chips auftreten können. 
 \enquote{Blooming} bezeichnet den Effekt, dass Pixel im CCD-Chip überbelichtet werden, sodass Elektronen in benachbarte Pixel wandern. Dies führt zu einem hellen Schein um das überbelichtete Pixel herum. \\
 Beim sogenannten \enquote{Smear} muss der Shutter deaktiviert sein. Es kommt während des Auslesevorgangs zu weiterer Belichtung der Pixel, sodass in der stark belichteten Spalte ein heller Streifen wahrnehmbar ist. 
 
 
-\subsection{Der Gain-Faktor}Es gilt: 
-Für die Berechnung des Gain-Faktors ergibt sich: \
-
+\subsection{Der Gain-Faktor}
 \begin{equation}
 \sigma_{EL} = g \cdot \sigma_{ADU}, 
 \label{eins}
@@ -67,7 +71,7 @@ und
 \begin{equation}
 \sigma_{EL} = \sqrt{N_{EL}}. 
 \end{equation}
-Aus \ref{eins} ergibt sich: 
+Aus \eqref{eins} ergibt sich: 
 \begin{equation}
 \sigma_{EL}^2 = N_{EL}, 
 \end{equation}
@@ -80,31 +84,44 @@ Daraus ergibt sich:
 g = \frac{N_{ADU}}{\sigma_{ADU}^2}
 \end{equation}
 
-Da tats"achlich nur das statistische Rauschen Poisson-verteilt ist, Zur möglichst genauen Berechnung des obigen Terms muss der Offset zwischen der $N_{ADU}$ und $N_{EL}$ bei der Aufnahme eines flat fields, der mittels bias frames ermittelt werden kann, herausgerechnet werden, sodass schließlich eine direkte Proportionalität zwischen $N_{ADU,\ ohneBias}$ und $N_{EL}$ besteht. 
-Da anschließend zwei systematisch gleiche Aufnahmen betrachtet werden, schreibt man: 
+Das gesamte detektierte Signal (in ADU) in der ursprünglichen Aufnahme $S_{raw}$ ist gegeben durch
 \begin{equation}
-N_{ADU,\ ohneBias} = \frac{N_{ADU}(A) + N_{ADU}(C) - \overline{B_1} - \overline{B_2}}{2}, 
-\end{equation}
-wobei $\overline{B_1}$ und $\overline{B_2}$ die Mittelwerte zweier bias frames sind, die ebenfalls systematisch gleich sind. \\
-Für die Standardabweichung von $N_{ADU, ohneBias}$ ergibt sich: \\
-Sowohl für $\sigma(A-C)^2$ als auch für $\sigma(B_1 - B_2)^2$ ergibt sich nach der in der Anleitung vorgeführten Rechnung, dass:
+S_{raw} = \frac{x}{g} + \frac{x_d}{g} + b
+\end{equation}, 
+wobei $x$ die Anzahl der detektierten Elektronen, $x_d$ der Dunkelstrom, also die Anzahl der durch CCD-Effekte herausgelösten Elektronen, $g$ der Gain-Faktor und $b$ der Bias ist.\\
+
+Die gesamte Unsicherheit $\sigma_{raw}$ (in ADU) der ursprünglichen Aufnahme berechnet sich durch 
 \begin{equation}
-\sigma_{ADU,\ flat}^2 \ ^{(stat)} = \frac{\sigma_{ADU}^2(A-C)}{2}
+\sigma_{raw}^2 = \sigma_b^2 + \frac{\sigma^2}{g^2} + \frac{\sigma_{d}^2}{g^2}
+\label{form:fehler}
 \end{equation}
-sowie
+wobei $\sigma$ die Standardabweichung der detektierten Elektronen, $\sigma_d$ der dark current noise und $\sigma_{b}$ der readout noise ist.\\ Durch Umstellen ergibt sich:
 \begin{equation}
-\sigma_{ADU,\ bias}^2 \ ^{(stat)} = \frac{\sigma_{ADU}^2(B_1-B_2)}{2}.
+x + x_d = (S_{raw} - b) \cdot g.
 \end{equation}
-Da beide Standardabweichungen statistischer Natur sind, ist ihre Kovarianz Null, sodass gilt: 
+Da sowohl x als auch $x_d$ Poisson-verteilt sind, folgt:
 \begin{equation}
-\sigma_{ADU, \ ohne}^2  \ ^{(stat)}=  \sigma_{ADU,\ flat}^2 \ ^{(stat)} - \sigma_{ADU,\ bias}^2 \ ^{(stat)}.
+\sigma^2 + \sigma_d^2 = x + x_d = (S_{raw} - b) \cdot g
 \end{equation}
-Durch Einsetzen ergibt sich nun: 
-\begin{align}
-g &= \frac{N_{ADU,\ ohneBias}}{\sigma_{ADU, \ ohne}^2  \ ^{(stat)}} = \frac{\frac{N_{ADU}(A) + N_{ADU}(C) - \overline{B_1} - \overline{B_2}}{2}}{\sigma_{ADU,\ flat}^2 \ ^{(stat)} - \sigma_{ADU,\ bias}^2 \ ^{(stat)}} &=\frac{\frac{N_{ADU}(A) + N_{ADU}(C) - \overline{B_1} - \overline{B_2}}{2}}{\frac{\sigma_{ADU}^2(A-C) - \sigma_{ADU}^2(B_1-B_2)}{2}} \nonumber\\
-&= \frac{N_{ADU}(A) + N_{ADU}(C) - \overline{B_1} - \overline{B_2}}{\sigma_{ADU}^2(A-C) - \sigma_{ADU}^2(B_1-B_2)}.\
+und mit \eqref{form:fehler} ergibt sich:
+\begin{equation}
+(S_{raw} - b) \cdot g = x + x_d = \sigma^2 + \sigma_d^2 = g^2 \cdot (\sigma_{row}^2 - \sigma_{b}^2).
+\end{equation}
+Daraus folgt direkt:
+\begin{equation}
+g = \frac{(S_{raw} - b)}{\sigma_{row}^2 - \sigma_{b}^2}.
+\end{equation}
+F"ur zwei systematisch gleiche Aufnahmen kann statt $S_{raw}$ auch der Mittelwert von $S_{raw,A_1}$ und $S_{raw,A_2}$ betrachtet werden. Gleiches gilt f"ur zwei systematisch gleiche bias frames. 
+Weiter gilt nach der in \cite{astr} angegebene Formel:
+\begin{equation}
+\sigma_{raw}^2 = \frac{\sigma^2(A_1 - A_2)}{2}, 
+\end{equation}
+wobei $A_1$ und $A_2$ die beiden systematisch gleichen Aufnahmen sind. Gleiches gilt f"ur die beiden systematisch gleichen bias frames. 
+Somit ergibt sich durch Einsetzen: 
+\begin{equation}
+g = \frac{(S_{raw} - b)}{\sigma_{row}^2 - \sigma_{b}^2} = g = \frac{\frac{S_{raw,A_1} + S_{raw,A_2}}{2} - \frac{b_1 + b_2}{2}}{\frac{\sigma^2(A_1 - A_2)}{2} - \frac{\sigma^2(B_1 - B_2)}{2}} = \frac{S_{raw,A_1} + S_{raw,A_2} - b_1 - b_2}{\sigma^2(A_1 - A_2) - \sigma^2(B_1 - B_2)}.
 \label{form:gain}
-\end{align}
+\end{equation}
 Diese Formel wird zur Berechnung des Gain-Faktors verwendet. 
 
 \subsection{Durchführung}
